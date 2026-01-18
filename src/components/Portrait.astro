@@ -1,0 +1,36 @@
+---
+interface Props {
+  showCaption?: boolean;
+}
+
+const { showCaption = true } = Astro.props;
+---
+
+<section class="section bg-slate-50">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <div class="relative">
+        <!-- Image container with decoration -->
+        <div class="relative aspect-[4/5] md:aspect-[3/4] max-w-md mx-auto">
+          <!-- Main image -->
+          <div class="relative rounded-2xl overflow-hidden border border-slate-200">
+            <img 
+              src="/images/laura-portrait.jpg" 
+              alt="Laura Ziegler – Projektmanagerin aus Bremen. Trägt ein blaues Oberteil mit pinken Streifen und lächelt in die Kamera."
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+        
+        {showCaption && (
+          <p class="mt-8 text-center text-sm text-slate-500 italic">
+            PS: Ja, das Bild ist KI-generiert.<br />
+            Stillstand ist keine Option.
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

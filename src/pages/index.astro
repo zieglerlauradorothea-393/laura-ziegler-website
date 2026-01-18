@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import IntroText from '../components/IntroText.astro';
+import ExperiencePreview from '../components/ExperiencePreview.astro';
+import Principles from '../components/Principles.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactPanel from '../components/ContactPanel.astro';
+
+const title = 'Projekt- & Veranstaltungsmanagement Bremen | Kunst, Kultur, Bildung';
+const description = 'Projekt- und Veranstaltungsmanagement für Kunst & Kultur, Bildung und Kreativbranche – aus Bremen. Struktur, klare Kommunikation und verlässliche Abläufe für Projekte, die funktionieren.';
+
+// Schema.org JSON-LD for Person + WebSite
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Laura Ziegler',
+  jobTitle: 'Projekt- und Veranstaltungsmanagerin',
+  description: 'Selbstständige Projektmanagerin für Kunst & Kultur, Bildung und Kreativbranche in Bremen.',
+  url: 'https://lauraziegler.de',
+  sameAs: [
+    'https://www.linkedin.com/in/laura-ziegler',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bremen',
+    addressRegion: 'HB',
+    addressCountry: 'DE',
+  },
+  knowsAbout: [
+    'Projektmanagement',
+    'Veranstaltungsmanagement',
+    'Kulturmanagement',
+    'Eventorganisation',
+    'Stakeholder-Kommunikation',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Laura Ziegler – Projektmanagement Bremen',
+  url: 'https://lauraziegler.de',
+  description: description,
+  inLanguage: 'de-DE',
+  author: personSchema,
+};
+
+// FAQPage Schema
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Für wen ist meine Arbeit gedacht?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ich arbeite mit Kultureinrichtungen, Bildungsträgern, Kreativagenturen und Veranstaltern zusammen – ob gemeinnützig oder gewerblich. Wichtig ist mir, dass das Projekt sinnvoll ist und Haltung hat.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Arbeitest du nur in Bremen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mein Schwerpunkt liegt in Bremen und Umgebung, aber ich unterstütze auch überregionale Projekte – remote oder vor Ort. Für größere Veranstaltungen bin ich flexibel einsetzbar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie sieht eine typische Zusammenarbeit aus?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Das hängt vom Projekt ab. Manchmal begleite ich von der Idee bis zur Umsetzung, manchmal springe ich für eine bestimmte Phase ein. Ein kostenloses Erstgespräch klärt, was du brauchst.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Was kostet eine Zusammenarbeit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Das richtet sich nach Umfang, Dauer und Art des Projekts. Ich arbeite mit Tagessätzen, Projektpauschalen oder stundenbasiert – je nachdem, was für dich am sinnvollsten ist.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Welche Aufgaben übernimmst du konkret?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Projektplanung und -steuerung, Veranstaltungsorganisation, Stakeholder-Kommunikation, Zeitpläne, Budgetkontrolle, Team-Koordination, Dokumentation – alles, was ein Projekt braucht, um zu funktionieren.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie schnell kannst du starten?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Das hängt von meiner aktuellen Auslastung ab. Für dringende Projekte finde ich oft schnell eine Lösung. Am besten meldest du dich frühzeitig – dann können wir gut planen.',
+      },
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} ogType="website" noTitleSuffix={true}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+  
+  <!-- Hero Section mit großem Bild -->
+  <Hero 
+    title="Projekte, die laufen. Veranstaltungen, die wirken."
+    subtitle="Projekt- und Veranstaltungsmanagement in Bremen für Kunst & Kultur, Bildung und Kreativprojekte."
+    tags={['Projektmanagement', 'Veranstaltungsmanagement', 'Bremen']}
+    heroImage="/images/laura-hero.jpeg"
+  />
+  
+  <!-- Intro / Positioning -->
+  <IntroText />
+  
+  <!-- Experience Preview -->
+  <ExperiencePreview />
+  
+  <!-- Principles / How I Work -->
+  <Principles />
+  
+  <!-- FAQ Section -->
+  <FAQ />
+
+  <!-- Statement -->
+  <section class="py-16 bg-pink" style="background-color: var(--color-pink);">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-xl md:text-2xl font-bold text-black leading-relaxed uppercase">
+          Struktur, Kommunikation und verlässliche Abläufe – damit alle wissen, was wann passiert.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact CTA -->
+  <ContactPanel />
+</Layout>

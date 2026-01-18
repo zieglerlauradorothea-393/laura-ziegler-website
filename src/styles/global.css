@@ -1,0 +1,323 @@
+@import "tailwindcss";
+
+/* ========================================
+   LAURA ZIEGLER – Design System
+   KLAR, PERSÖNLICH, MUTIG
+   Inspiriert von Dear Monday
+   Keine Gradienten – solide Farben!
+   ======================================== */
+
+@theme {
+  /* Hauptfarben - solide, keine Gradienten */
+  --color-coral: #ff6b35;
+  --color-coral-light: #fff0eb;
+  --color-pink: #ffb6c1;
+  --color-pink-bright: #ff69b4;
+  --color-lavender: #c9b8ff;
+  --color-lavender-light: #f0ebff;
+  --color-mint: #98d4bb;
+  --color-mint-dark: #2d8a5f;
+  --color-yellow: #d4c75f;
+  --color-blue: #6eb5ff;
+  
+  /* Neutrals */
+  --color-cream: #f5f5f0;
+  --color-gray-light: #f0f0eb;
+  --color-gray: #e5e5e0;
+  --color-black: #1a1a1a;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-section: 5rem;
+  --spacing-section-mobile: 3rem;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-black);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-black);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw + 1rem, 5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 5vw + 0.5rem, 3.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3vw + 0.25rem, 2rem);
+  }
+
+  a {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-coral);
+  }
+
+  ::selection {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-black);
+    outline-offset: 2px;
+  }
+}
+
+/* Component utilities */
+@layer components {
+  /* Primary button - Schwarz */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+    background: var(--color-black);
+    border-radius: var(--radius-full);
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background: #333;
+    color: var(--color-white);
+    transform: translateY(-2px);
+  }
+
+  /* Secondary button - Weiß mit Border */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-black);
+    background: var(--color-white);
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-full);
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  /* Card styles */
+  .card {
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Section styles */
+  .section {
+    padding: var(--spacing-section-mobile) 0;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--spacing-section) 0;
+    }
+  }
+
+  /* Farbige Section-Hintergründe - SOLIDE */
+  .section-coral {
+    background: var(--color-coral);
+  }
+
+  .section-pink {
+    background: var(--color-pink);
+  }
+
+  .section-lavender {
+    background: var(--color-lavender);
+  }
+
+  .section-mint {
+    background: var(--color-mint);
+  }
+
+  .section-cream {
+    background: var(--color-cream);
+  }
+
+  .section-gray {
+    background: var(--color-gray-light);
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  /* Tag/Badge styles */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-black);
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+
+  .tag-coral {
+    background: var(--color-coral);
+    border-color: var(--color-coral);
+    color: var(--color-black);
+  }
+
+  .tag-pink {
+    background: var(--color-pink);
+    border-color: var(--color-pink);
+    color: var(--color-black);
+  }
+
+  .tag-lavender {
+    background: var(--color-lavender);
+    border-color: var(--color-lavender);
+    color: var(--color-black);
+  }
+
+  .tag-mint {
+    background: var(--color-mint);
+    border-color: var(--color-mint);
+    color: var(--color-black);
+  }
+
+  .tag-yellow {
+    background: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--color-black);
+  }
+
+  .tag-blue {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-black);
+  }
+}
+
+/* Farbige Cards wie bei Dear Monday Events */
+.card-coral {
+  background: var(--color-coral);
+}
+
+.card-pink {
+  background: var(--color-pink);
+}
+
+.card-lavender {
+  background: var(--color-lavender);
+}
+
+.card-mint {
+  background: var(--color-mint);
+}
+
+.card-yellow {
+  background: var(--color-yellow);
+}
+
+.card-blue {
+  background: var(--color-blue);
+}
+
+/* Organische Shape für Foto-Hintergrund */
+.blob-shape {
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Wellige Trennlinie wie bei Dear Monday */
+.wave-divider {
+  position: relative;
+  height: 40px;
+  background-repeat: repeat-x;
+  background-size: 100px 40px;
+}
+
+/* Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

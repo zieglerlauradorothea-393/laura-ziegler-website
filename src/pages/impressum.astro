@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Impressum – Laura Ziegler';
+const description = 'Impressum und Angaben gemäß § 5 TMG für Laura Ziegler, Projektmanagement Bremen.';
+---
+
+<Layout title={title} description={description} noIndex={true}>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-slate-500">
+            <li><a href="/" class="hover:text-coral-600 transition-colors">Start</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-slate-900">Impressum</li>
+          </ol>
+        </nav>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Impressum</h1>
+        
+        <div class="prose prose-slate max-w-none">
+          <h2>Angaben gemäß § 5 TMG</h2>
+          <p>
+            Laura Ziegler<br />
+            Projekt- und Veranstaltungsmanagement<br />
+            [Straße und Hausnummer]<br />
+            [PLZ] Bremen
+          </p>
+          
+          <h2>Kontakt</h2>
+          <p>
+            E-Mail: zieglerlauradorothea@gmail.com
+          </p>
+          
+          <h2>Umsatzsteuer-ID</h2>
+          <p>
+            [Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE XXX XXX XXX]
+          </p>
+          
+          <h2>Redaktionell verantwortlich</h2>
+          <p>
+            Laura Ziegler<br />
+            [Adresse wie oben]
+          </p>
+          
+          <h2>EU-Streitschlichtung</h2>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br />
+            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+          </p>
+          
+          <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+          <p>
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+            Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+          
+          <hr />
+          
+          <p class="text-sm text-slate-500 mt-8">
+            <strong>Hinweis:</strong> Die in eckigen Klammern stehenden Angaben müssen vor Veröffentlichung 
+            durch die tatsächlichen Daten ersetzt werden.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose p {
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .prose a {
+    color: #4630a3;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #ef5744;
+  }
+  .prose hr {
+    border-color: #e2e8f0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+// FAQ Section – klar und einfach
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items?: FAQItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const defaultFAQs: FAQItem[] = [
+  {
+    question: 'Für wen ist meine Arbeit gedacht?',
+    answer: 'Ich arbeite mit Kultureinrichtungen, Bildungsträgern, Kreativagenturen und Veranstaltern zusammen – ob gemeinnützig oder gewerblich. Wichtig ist mir, dass das Projekt sinnvoll ist und Haltung hat.',
+  },
+  {
+    question: 'Arbeitest du nur in Bremen?',
+    answer: 'Mein Schwerpunkt liegt in Bremen und Umgebung, aber ich unterstütze auch überregionale Projekte – remote oder vor Ort. Für größere Veranstaltungen bin ich flexibel einsetzbar.',
+  },
+  {
+    question: 'Wie sieht eine typische Zusammenarbeit aus?',
+    answer: 'Das hängt vom Projekt ab. Manchmal begleite ich von der Idee bis zur Umsetzung, manchmal springe ich für eine bestimmte Phase ein. Ein kostenloses Erstgespräch klärt, was du brauchst.',
+  },
+  {
+    question: 'Was kostet eine Zusammenarbeit?',
+    answer: 'Das richtet sich nach Umfang, Dauer und Art des Projekts. Ich arbeite mit Tagessätzen, Projektpauschalen oder stundenbasiert – je nachdem, was für dich am sinnvollsten ist.',
+  },
+  {
+    question: 'Welche Aufgaben übernimmst du konkret?',
+    answer: 'Projektplanung und -steuerung, Veranstaltungsorganisation, Stakeholder-Kommunikation, Zeitpläne, Budgetkontrolle, Team-Koordination, Dokumentation – alles, was ein Projekt braucht, um zu funktionieren.',
+  },
+  {
+    question: 'Wie schnell kannst du starten?',
+    answer: 'Das hängt von meiner aktuellen Auslastung ab. Für dringende Projekte finde ich oft schnell eine Lösung. Am besten meldest du dich frühzeitig – dann können wir gut planen.',
+  },
+];
+
+const { items = defaultFAQs, title = 'Häufige Fragen', subtitle } = Astro.props;
+---
+
+<section class="section bg-white" id="faq">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="tag mb-6">FAQ</span>
+        <h2 class="text-black">
+          {title}
+        </h2>
+        {subtitle && (
+          <p class="text-lg text-black/70 mt-4">{subtitle}</p>
+        )}
+      </div>
+      
+      <div class="space-y-3">
+        {items.map((faq) => (
+          <details class="group bg-cream rounded-2xl overflow-hidden" style="background-color: var(--color-cream);">
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-black hover:bg-gray transition-colors list-none" style="--tw-bg-opacity: 1;">
+              <span class="text-left">{faq.question}</span>
+              <span class="shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center transition-transform group-open:rotate-45">
+                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-black/70 leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

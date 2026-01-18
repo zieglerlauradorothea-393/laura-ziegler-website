@@ -1,0 +1,37 @@
+# Robots.txt for lauraziegler.de
+# Projektmanagement Bremen - Laura Ziegler
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lauraziegler.de/sitemap-index.xml
+
+# Disallow admin/internal paths (if any)
+Disallow: /api/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow AI/LLM search engines for GEO/LLMO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /

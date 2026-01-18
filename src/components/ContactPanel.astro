@@ -1,0 +1,86 @@
+---
+// Kontakt-Panel – klar und persönlich
+
+interface Props {
+  showHeading?: boolean;
+  variant?: 'default' | 'compact';
+}
+
+const { showHeading = true, variant = 'default' } = Astro.props;
+
+const contactInfo = {
+  email: 'zieglerlauradorothea@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/laura-ziegler',
+  location: 'Bremen & Umgebung',
+};
+---
+
+<section class={`py-16 md:py-24 bg-coral ${variant === 'compact' ? 'py-12' : ''}`} style="background-color: var(--color-coral);" id="kontakt-panel">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      {showHeading && (
+        <div class="text-center mb-10">
+          <h2 class="text-black mb-4">
+            Lass uns reden.
+          </h2>
+          <p class="text-xl text-black/80 font-medium">
+            Du hast ein Projekt? Eine Idee? Oder erstmal Fragen?
+          </p>
+        </div>
+      )}
+      
+      <!-- Newsletter-Style Box wie bei Dear Monday -->
+      <div class="bg-white rounded-2xl p-8 md:p-10">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+          <!-- Linke Seite: Text -->
+          <div class="flex-shrink-0 text-center md:text-left">
+            <div class="inline-block bg-pink rounded-2xl px-6 py-4" style="background-color: var(--color-pink);">
+              <span class="font-bold text-black text-lg uppercase">Schreib mir</span>
+            </div>
+          </div>
+          
+          <!-- Rechte Seite: Kontakt-Optionen -->
+          <div class="flex-1 w-full">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <!-- Email -->
+              <a 
+                href={`mailto:${contactInfo.email}`}
+                class="flex-1 flex items-center gap-3 px-5 py-4 bg-cream rounded-xl hover:bg-gray transition-colors"
+                style="background-color: var(--color-cream);"
+              >
+                <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span class="font-medium text-black text-sm truncate">{contactInfo.email}</span>
+              </a>
+              
+              <!-- CTA Button -->
+              <a href="/kontakt" class="btn-primary whitespace-nowrap">
+                Kontakt
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Location & Response Time -->
+        <div class="mt-6 pt-6 border-t border-gray flex flex-wrap justify-center gap-6 text-sm text-black/70" style="border-color: var(--color-gray);">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>{contactInfo.location}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Antwort innerhalb 1–2 Werktagen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

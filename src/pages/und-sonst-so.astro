@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImpulsePosts from '../components/ImpulsePosts.astro';
+import ContactPanel from '../components/ContactPanel.astro';
+
+const title = 'Und sonst so? – Laura Ziegler';
+const description = 'Mehr über mich: Philosophische Gedanken zu Projektmanagement und Yoga.';
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="py-16 md:py-24 bg-mint" style="background-color: var(--color-mint);">
+    <div class="container">
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-black/60">
+          <li><a href="/" class="hover:text-black transition-colors">Start</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-black">Und sonst so?</li>
+        </ol>
+      </nav>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-black mb-6">
+            Und sonst so?
+          </h1>
+          <p class="text-xl text-black/80 leading-relaxed font-medium mb-4">
+            Ich arbeite als Projekt- und Veranstaltungsmanagerin – und unterrichte Yoga.
+          </p>
+          <p class="text-lg text-black/70 leading-relaxed">
+            Hier findest du ein paar Gedanken über das, was mich antreibt – und warum Philosophie, Achtsamkeit und gutes Projektmanagement mehr miteinander zu tun haben, als man denkt.
+          </p>
+        </div>
+        
+        <!-- Photo with Shape -->
+        <div class="relative flex justify-center">
+          <div 
+            class="absolute w-[85%] h-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
+            style="background-color: var(--color-lavender);"
+            aria-hidden="true"
+          ></div>
+          <img 
+            src="/images/laura-portrait-real.jpeg" 
+            alt="Laura Ziegler – Portrait"
+            class="relative z-10 rounded-3xl w-full max-w-sm object-cover"
+            style="aspect-ratio: 3/4;"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <ImpulsePosts />
+  
+  <!-- Yoga Hint Section -->
+  <section class="section bg-yellow" style="background-color: var(--color-yellow);">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="tag mb-6">Ausgleich</span>
+        <h2 class="text-black mb-6">
+          Wenn ich mal nichts sortieren will
+        </h2>
+        <p class="text-lg text-black/80 leading-relaxed mb-4">
+          Dann unterrichte ich Yoga. Da darf alles losgelassen werden – auch die To-do-Listen im Kopf.
+        </p>
+        <p class="text-black/60 italic">
+          (Biete ich übrigens auch selbstständig an. 😉)
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <ContactPanel />
+</Layout>

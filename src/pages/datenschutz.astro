@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Datenschutzerklärung – Laura Ziegler';
+const description = 'Datenschutzerklärung für die Website von Laura Ziegler, Projektmanagement Bremen.';
+---
+
+<Layout title={title} description={description} noIndex={true}>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-slate-500">
+            <li><a href="/" class="hover:text-coral-600 transition-colors">Start</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-slate-900">Datenschutz</li>
+          </ol>
+        </nav>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Datenschutzerklärung</h1>
+        
+        <div class="prose prose-slate max-w-none">
+          <h2>1. Datenschutz auf einen Blick</h2>
+          
+          <h3>Allgemeine Hinweise</h3>
+          <p>
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen 
+            Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit 
+            denen Sie persönlich identifiziert werden können.
+          </p>
+          
+          <h3>Datenerfassung auf dieser Website</h3>
+          <p>
+            <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br />
+            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
+            können Sie dem Impressum dieser Website entnehmen.
+          </p>
+          
+          <p>
+            <strong>Wie erfassen wir Ihre Daten?</strong><br />
+            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich 
+            z. B. um Daten handeln, die Sie per E-Mail an uns senden.
+          </p>
+          
+          <p>
+            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere 
+            IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder 
+            Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+          </p>
+          
+          <h2>2. Hosting</h2>
+          <p>
+            Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+          </p>
+          <p>
+            [Hier den Hosting-Anbieter und dessen Datenschutzbestimmungen einfügen]
+          </p>
+          
+          <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+          
+          <h3>Datenschutz</h3>
+          <p>
+            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln 
+            Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften 
+            sowie dieser Datenschutzerklärung.
+          </p>
+          
+          <h3>Hinweis zur verantwortlichen Stelle</h3>
+          <p>
+            Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+          </p>
+          <p>
+            Laura Ziegler<br />
+            [Adresse]<br />
+            E-Mail: zieglerlauradorothea@gmail.com
+          </p>
+          
+          <h3>Speicherdauer</h3>
+          <p>
+            Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, 
+            verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt.
+          </p>
+          
+          <h2>4. Datenerfassung auf dieser Website</h2>
+          
+          <h3>Server-Log-Dateien</h3>
+          <p>
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten 
+            Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+          </p>
+          <ul>
+            <li>Browsertyp und Browserversion</li>
+            <li>verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li>
+            <li>IP-Adresse</li>
+          </ul>
+          <p>
+            Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+          </p>
+          
+          <h3>Anfrage per E-Mail</h3>
+          <p>
+            Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden 
+            personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns 
+            gespeichert und verarbeitet.
+          </p>
+          
+          <h2>5. Externe Dienste</h2>
+          
+          <h3>Google Fonts (lokales Hosting)</h3>
+          <p>
+            Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, 
+            die lokal eingebunden werden. Es findet keine Verbindung zu Google-Servern statt.
+          </p>
+          
+          <h3>LinkedIn</h3>
+          <p>
+            Diese Website enthält Links zu LinkedIn. Wenn Sie diese Links anklicken, werden Sie zu LinkedIn 
+            weitergeleitet und es gelten die Datenschutzbestimmungen von LinkedIn.
+          </p>
+          
+          <hr />
+          
+          <p class="text-sm text-slate-500 mt-8">
+            <strong>Hinweis:</strong> Diese Datenschutzerklärung ist ein Muster und muss vor Veröffentlichung 
+            an die tatsächlichen Gegebenheiten angepasst werden. Bei Unsicherheiten empfehlen wir die 
+            Beratung durch einen Rechtsanwalt oder Datenschutzbeauftragten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose p {
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .prose ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .prose ul li {
+    margin-bottom: 0.25rem;
+  }
+  .prose a {
+    color: #4630a3;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #ef5744;
+  }
+  .prose hr {
+    border-color: #e2e8f0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>
