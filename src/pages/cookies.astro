@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Cookie-Richtlinie – Laura Ziegler';
+const description = 'Cookie-Richtlinie für die Website von Laura Ziegler, Projektmanagement Bremen.';
+---
+
+<Layout title={title} description={description} noIndex={true}>
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-black/60">
+            <li><a href="/" class="hover:text-black transition-colors">Start</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-black">Cookies</li>
+          </ol>
+        </nav>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-black mb-8">Cookie-Richtlinie</h1>
+        
+        <div class="prose prose-slate max-w-none">
+          <p class="text-lg text-black/80">
+            Diese Website verwendet Cookies und ähnliche Technologien, um grundlegende Funktionen 
+            bereitzustellen und – sofern Du einwilligst – optionale Funktionen (z. B. Statistik) 
+            zu ermöglichen.
+          </p>
+          
+          <h2>1. Was sind Cookies?</h2>
+          <p>
+            Cookies sind kleine Textdateien, die im Browser gespeichert werden. Ähnliche 
+            Technologien (z. B. Local Storage) können ebenfalls Informationen auf Deinem 
+            Endgerät speichern.
+          </p>
+          
+          <h2>2. Kategorien</h2>
+          
+          <h3>a) Notwendige Cookies</h3>
+          <p>
+            Diese sind erforderlich, damit die Website funktioniert (z. B. Spracheinstellungen, 
+            Sicherheitsfunktionen). Sie werden ohne Einwilligung eingesetzt, soweit sie 
+            technisch erforderlich sind.
+          </p>
+          
+          <h3>b) Statistik (optional)</h3>
+          <p>
+            Hilft zu verstehen, wie Besucher:innen die Website nutzen (z. B. Seitenaufrufe). 
+            Wird nur nach Einwilligung aktiviert.
+          </p>
+          
+          <h3>c) Marketing (optional)</h3>
+          <p>
+            Wird genutzt, um Inhalte/Angebote zu personalisieren oder Kampagnen zu messen. 
+            Wird nur nach Einwilligung aktiviert.
+          </p>
+          
+          <h2>3. Aktueller Status</h2>
+          <div class="p-6 rounded-2xl my-6" style="background-color: var(--color-mint);">
+            <p class="text-black font-medium mb-0">
+              <strong>Hinweis:</strong> Diese Website verwendet derzeit nur technisch notwendige 
+              Cookies, die für den Betrieb erforderlich sind. Es werden keine Tracking- oder 
+              Marketing-Cookies eingesetzt.
+            </p>
+          </div>
+          
+          <h2>4. Cookies in Deinem Browser verwalten</h2>
+          <p>
+            Du kannst Cookies auch direkt in Deinem Browser verwalten, löschen oder blockieren. 
+            Beachte, dass das Blockieren aller Cookies die Funktionalität einiger Websites 
+            einschränken kann.
+          </p>
+          <ul>
+            <li><strong>Chrome:</strong> Einstellungen → Datenschutz und Sicherheit → Cookies</li>
+            <li><strong>Firefox:</strong> Einstellungen → Datenschutz & Sicherheit → Cookies</li>
+            <li><strong>Safari:</strong> Einstellungen → Datenschutz → Cookies</li>
+            <li><strong>Edge:</strong> Einstellungen → Cookies und Websiteberechtigungen</li>
+          </ul>
+          
+          <h2>5. Weitere Informationen</h2>
+          <p>
+            Mehr zum Thema Datenschutz findest Du in meiner 
+            <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+          
+          <hr />
+          
+          <p class="text-sm text-black/50 mt-8">
+            Stand: Januar 2026
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose p {
+    color: #475569;
+    margin-bottom: 1rem;
+  }
+  .prose ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: #475569;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+  }
+  .prose ul li {
+    margin-bottom: 0.5rem;
+  }
+  .prose a {
+    color: var(--color-coral);
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #0f172a;
+  }
+  .prose hr {
+    border-color: #e2e8f0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+</style>

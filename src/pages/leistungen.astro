@@ -1,69 +1,88 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactPanel from '../components/ContactPanel.astro';
-import FAQ from '../components/FAQ.astro';
 
-const title = 'Leistungen – Projektmanagement Bremen';
-const description = 'Projektmanagement, Veranstaltungsorganisation, Stakeholder-Kommunikation für Kunst & Kultur, Bildung und Kreativbranche in Bremen.';
+const title = 'Leistungen – Laura Ziegler';
+const description = 'Projekt- und Eventmanagement für Kunst & Kultur, Bildung und Kreativprojekte – in Bremen und darüber hinaus.';
 
-interface Service {
-  id: string;
+interface ServiceCard {
   title: string;
   icon: string;
-  forWhom: string;
-  tasks: string[];
-  result: string;
-  examples?: string[];
+  fuerWen: string;
+  aufgaben: string[];
+  ergebnis: string;
+  tags: string[];
   color: string;
 }
 
-const services: Service[] = [
+const mainServices: ServiceCard[] = [
   {
-    id: 'projektmanagement',
     title: 'Projektmanagement',
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-    forWhom: 'Für Organisationen, die ein Projekt von A bis Z begleitet wissen wollen.',
-    tasks: ['Projektplanung und Meilenstein-Definition', 'Zeit- und Ressourcenplanung', 'Budgetkontrolle und Reporting', 'Koordination aller Beteiligten', 'Dokumentation und Wissenstransfer'],
-    result: 'Ein Projekt, das im Rahmen bleibt – zeitlich, finanziell und inhaltlich.',
-    examples: ['Kulturprojekte', 'Bildungsinitiativen', 'Kampagnen'],
+    icon: '',
+    fuerWen: 'Für Organisationen, die ein Projekt von A bis Z begleitet wissen wollen.',
+    aufgaben: [
+      'Projekt-Setup: Ziele, Umfang, Rollen, Prioritäten',
+      'Zeit- und Meilensteinplanung',
+      'Ressourcen- und Aufgabensteuerung',
+      'Abstimmungsroutinen: Jour fixe, Vorstands-/Team-Meetings, Protokolle',
+      'Schnittstellenkoordination mit Partner:innen, Förderer:innen und weiteren Beteiligten',
+    ],
+    ergebnis: 'Ein Projekt, das im Rahmen bleibt – zeitlich, finanziell und inhaltlich.',
+    tags: ['Kulturprojekte', 'Bildungsinitiativen', 'Kampagnen'],
     color: 'lavender',
   },
   {
-    id: 'veranstaltungsmanagement',
     title: 'Veranstaltungsmanagement',
-    icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
-    forWhom: 'Für alle, die Events planen – von der intimen Lesung bis zum großen Festival.',
-    tasks: ['Konzeption und Ablaufplanung', 'Location-Scouting und Technik', 'Künstler:innen- und Gästebetreuung', 'Vor-Ort-Koordination', 'Nachbereitung und Evaluation'],
-    result: 'Eine Veranstaltung, die läuft. Wo sich alle wohlfühlen.',
-    examples: ['Konzerte', 'Workshops', 'Konferenzen', 'Festivals'],
+    icon: '',
+    fuerWen: 'Für alle, die Events planen – von der intimen Lesung bis zur großen Konferenz.',
+    aufgaben: [
+      'Planung, Vorbereitung und Durchführung von Veranstaltungsformaten',
+      'Ablauf- und Produktionsplanung',
+      'Location- und Technikabstimmung inkl. Dienstleister:innen',
+      'Gäst:innen-/Teilnehmendenkoordination & Kommunikation',
+      'Festival-/Eventorganisation (z. B. wiederkehrende Formate/Veranstaltungsreihen)',
+    ],
+    ergebnis: 'Eine Veranstaltung, die läuft und sich alle wohlfühlen.',
+    tags: ['Konzerte', 'Workshops', 'Konferenzen', 'Festivals'],
     color: 'yellow',
-  },
-  {
-    id: 'kommunikation',
-    title: 'Kommunikation & Stakeholder',
-    icon: 'M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z',
-    forWhom: 'Für Projekte mit vielen Beteiligten.',
-    tasks: ['Stakeholder-Analyse und Mapping', 'Kommunikationsplanung', 'Meeting-Moderation', 'Informationsfluss sicherstellen', 'Konfliktprävention'],
-    result: 'Alle wissen Bescheid und arbeiten in dieselbe Richtung.',
-    examples: ['Kooperationsprojekte', 'Gremienarbeit'],
-    color: 'blue',
-  },
-  {
-    id: 'organisation',
-    title: 'Produktion & Organisation',
-    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-    forWhom: 'Für kreative Produktionen.',
-    tasks: ['Produktionsplanung', 'Team-Koordination', 'Technik- und Equipment-Management', 'Budgetierung und Abrechnung'],
-    result: 'Eine Produktion, bei der sich das Team auf die Inhalte konzentrieren kann.',
-    examples: ['Filmproduktionen', 'Theaterproduktionen', 'Ausstellungen'],
-    color: 'coral',
   },
 ];
 
-const leistungenFAQ = [
-  { question: 'Kann ich dich auch nur für Teilbereiche buchen?', answer: 'Absolut. Nicht jedes Projekt braucht alles. Manchmal reicht Unterstützung in der Planungsphase, manchmal nur die Vor-Ort-Koordination.' },
-  { question: 'Arbeitest du auch mit kleinen Budgets?', answer: 'Ja, wenn das Projekt passt. Für gemeinnützige Initiativen oder Kulturprojekte finde ich oft flexible Lösungen.' },
-  { question: 'Wie läuft ein Erstgespräch ab?', answer: 'Unverbindlich und kostenlos. Wir sprechen über dein Projekt, deine Herausforderungen und Ziele.' },
+interface SupportService {
+  title: string;
+  items: string[];
+  color: string;
+}
+
+const supportServices: SupportService[] = [
+  {
+    title: 'Budget, Abrechnung & Fördermittel',
+    items: [
+      'Kalkulation, Budgetierung und Controlling',
+      'Kostenpläne, Mittelabrufe und Verwendungsnachweise',
+      'Abrechnungsvorbereitung und Finanzorganisation',
+    ],
+    color: 'mint',
+  },
+  {
+    title: 'Kommunikation & Organisation',
+    items: [
+      'Kommunikationsschnittstelle zwischen Auftraggebenden, Team, Partner:innen, Förderer:innen und Gästen',
+      'Regelmäßige Abstimmungen & Reporting an Kund:innen/Projektbeteiligte',
+      'Koordination mit Gastspielorten/Kooperationspartner:innen',
+    ],
+    color: 'coral',
+  },
+  {
+    title: 'Büroorganisation & Team-Support',
+    items: [
+      'Büroorganisation/Verwaltung im laufenden Betrieb',
+      'Ticketing',
+      'Teamorganisation',
+      'Allgemeine Orga-Themen: Kund:innenkontakt, Statistik, IT-Basics',
+    ],
+    color: 'blue',
+  },
 ];
 ---
 
@@ -80,73 +99,120 @@ const leistungenFAQ = [
       </nav>
       
       <div class="max-w-3xl">
-        <h1 class="text-black mb-6">Was ich für dich tun kann.</h1>
+        <h1 class="text-black mb-6">Leistungen</h1>
         <p class="text-xl text-black/80 leading-relaxed font-medium">
-          Projektmanagement, Veranstaltungsorganisation, Kommunikation – ich bringe Struktur in deine Ideen.
+          Projekt- und Eventmanagement für Kunst & Kultur, Bildung und Kreativprojekte – in Bremen und darüber hinaus. Du bekommst Struktur, Planung und Koordination aus einer Hand.
         </p>
       </div>
     </div>
   </section>
   
-  <!-- Services Grid -->
+  <!-- Main Services (2-column cards) -->
   <section class="section bg-cream" style="background-color: var(--color-cream);">
     <div class="container">
-      <div class="text-center mb-12">
-        <span class="tag mb-6">Services</span>
-        <h2 class="text-black">Meine Leistungen</h2>
-      </div>
-      
-      <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-        {services.map((service) => (
-          <article 
-            id={service.id}
-            class="rounded-2xl p-6 md:p-8"
-            style={`background-color: var(--color-${service.color});`}
-          >
-            <div class="flex items-start gap-4 mb-6">
-              <div class="shrink-0 w-12 h-12 rounded-xl bg-white/50 flex items-center justify-center">
-                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon} />
-                </svg>
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+          {mainServices.map((service) => (
+            <article 
+              class="rounded-3xl p-8 flex flex-col"
+              style={`background-color: var(--color-${service.color});`}
+            >
+              <!-- Header -->
+              <div class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-black text-black uppercase tracking-tight">
+                  {service.title}
+                </h2>
               </div>
-              <h2 class="text-xl font-bold text-black uppercase">{service.title}</h2>
-            </div>
-            
-            <div class="mb-4">
-              <h3 class="text-xs font-bold text-black uppercase tracking-wide mb-2">Für wen</h3>
-              <p class="text-black/80">{service.forWhom}</p>
-            </div>
-            
-            <div class="mb-4">
-              <h3 class="text-xs font-bold text-black uppercase tracking-wide mb-2">Typische Aufgaben</h3>
-              <ul class="space-y-1">
-                {service.tasks.map(task => (
-                  <li class="flex items-start gap-2 text-black/80">
-                    <span class="text-black mt-0.5">✓</span>
-                    <span>{task}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div class="p-4 bg-white/50 rounded-xl mb-4">
-              <h3 class="text-xs font-bold text-black uppercase tracking-wide mb-2">Das Ergebnis</h3>
-              <p class="text-black font-medium">{service.result}</p>
-            </div>
-            
-            {service.examples && (
+              
+              <!-- Für wen -->
+              <div class="mb-6">
+                <h3 class="text-xs font-bold text-black/60 uppercase tracking-wider mb-2">Für wen</h3>
+                <p class="text-black/90 text-lg">{service.fuerWen}</p>
+              </div>
+              
+              <!-- Typische Aufgaben -->
+              <div class="mb-6 flex-1">
+                <h3 class="text-xs font-bold text-black/60 uppercase tracking-wider mb-4">Typische Aufgaben</h3>
+                <ul class="space-y-3">
+                  {service.aufgaben.map((item) => (
+                    <li class="flex items-start gap-3 text-black/80">
+                      <svg class="w-5 h-5 text-black/60 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <!-- Das Ergebnis -->
+              <div class="rounded-2xl p-5 mb-6" style={`background-color: color-mix(in srgb, var(--color-${service.color}) 70%, black 10%);`}>
+                <h3 class="text-xs font-bold text-black/60 uppercase tracking-wider mb-2">Das Ergebnis</h3>
+                <p class="text-black font-medium text-lg">{service.ergebnis}</p>
+              </div>
+              
+              <!-- Tags -->
               <div class="flex flex-wrap gap-2">
-                {service.examples.map((example) => (
-                  <span class="inline-flex items-center px-3 py-1 text-xs font-bold uppercase bg-white/50 rounded-full text-black">{example}</span>
+                {service.tags.map((tag) => (
+                  <span class="inline-flex items-center px-4 py-2 text-xs font-bold uppercase bg-white/40 border-2 border-black/20 rounded-full text-black">
+                    {tag}
+                  </span>
                 ))}
               </div>
-            )}
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
   
-  <FAQ items={leistungenFAQ} title="Fragen zu meinen Leistungen" />
+  <!-- Support Services -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="tag mb-6">Ergänzend</span>
+          <h2 class="text-black">Weitere Leistungen</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+          {supportServices.map((service) => (
+            <article 
+              class="rounded-2xl p-6"
+              style={`background-color: var(--color-${service.color});`}
+            >
+              <h3 class="text-lg font-bold text-black mb-4 uppercase">{service.title}</h3>
+              <ul class="space-y-2">
+                {service.items.map((item) => (
+                  <li class="flex items-start gap-2 text-black/80 text-sm">
+                    <svg class="w-4 h-4 text-black/50 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Match CTA -->
+  <section class="py-16 bg-pink" style="background-color: var(--color-pink);">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-black mb-6">Match?</h2>
+        <a href="/kontakt" class="btn-primary">
+          Projekt anfragen
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
   <ContactPanel />
 </Layout>

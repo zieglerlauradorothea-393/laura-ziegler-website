@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 const title = 'Impressum – Laura Ziegler';
-const description = 'Impressum und Angaben gemäß § 5 TMG für Laura Ziegler, Projektmanagement Bremen.';
+const description = 'Impressum und Angaben zur Anbieterin für Laura Ziegler, Projektmanagement Bremen.';
 ---
 
 <Layout title={title} description={description} noIndex={true}>
@@ -10,22 +10,23 @@ const description = 'Impressum und Angaben gemäß § 5 TMG für Laura Ziegler, 
     <div class="container">
       <div class="max-w-3xl mx-auto">
         <nav class="mb-8 text-sm" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-slate-500">
-            <li><a href="/" class="hover:text-coral-600 transition-colors">Start</a></li>
+          <ol class="flex items-center gap-2 text-black/60">
+            <li><a href="/" class="hover:text-black transition-colors">Start</a></li>
             <li aria-hidden="true">/</li>
-            <li class="text-slate-900">Impressum</li>
+            <li class="text-black">Impressum</li>
           </ol>
         </nav>
         
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Impressum</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-black mb-8">Impressum</h1>
         
         <div class="prose prose-slate max-w-none">
-          <h2>Angaben gemäß § 5 TMG</h2>
+          <h2>Angaben zur Anbieterin</h2>
           <p>
-            Laura Ziegler<br />
-            Projekt- und Veranstaltungsmanagement<br />
-            [Straße und Hausnummer]<br />
-            [PLZ] Bremen
+            Laura Dorothea Ziegler<br />
+            Freiberuflerin<br />
+            Osterdeich 18<br />
+            28203 Bremen<br />
+            Deutschland
           </p>
           
           <h2>Kontakt</h2>
@@ -33,36 +34,53 @@ const description = 'Impressum und Angaben gemäß § 5 TMG für Laura Ziegler, 
             E-Mail: zieglerlauradorothea@gmail.com
           </p>
           
-          <h2>Umsatzsteuer-ID</h2>
+          <h2>Umsatzsteuer</h2>
           <p>
-            [Falls vorhanden: Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE XXX XXX XXX]
+            Keine Umsatzsteuer-Identifikationsnummer vorhanden.
           </p>
           
-          <h2>Redaktionell verantwortlich</h2>
+          <h2>Inhaltlich verantwortlich</h2>
           <p>
-            Laura Ziegler<br />
-            [Adresse wie oben]
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br />
+            Laura Dorothea Ziegler<br />
+            Osterdeich 18<br />
+            28203 Bremen<br />
+            Deutschland
           </p>
           
-          <h2>EU-Streitschlichtung</h2>
+          <h2>Haftung für Inhalte</h2>
           <p>
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br />
-            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+            Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, 
+            Vollständigkeit und Aktualität kann ich jedoch keine Gewähr übernehmen.
           </p>
           
-          <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+          <h2>Haftung für Links</h2>
           <p>
-            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
+            Diese Website enthält Links zu externen Websites Dritter. Auf deren Inhalte habe ich 
+            keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets die jeweilige 
+            Anbieter:in oder Betreiber:in der Seiten verantwortlich.
+          </p>
+          
+          <h2>Urheberrecht</h2>
+          <p>
+            Die auf dieser Website veröffentlichten Inhalte (Texte, Bilder, Grafiken) unterliegen 
+            dem Urheberrecht. Jede Verwendung außerhalb der Grenzen des Urheberrechts bedarf 
+            meiner vorherigen Zustimmung, sofern nicht ausdrücklich anders gekennzeichnet.
+          </p>
+          
+          <h2>Hinweis zur Verbraucherstreitbeilegung</h2>
+          <p>
+            Hinweis gemäß § 36 VSBG:<br />
+            Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer 
             Verbraucherschlichtungsstelle teilzunehmen.
           </p>
           
           <hr />
           
-          <p class="text-sm text-slate-500 mt-8">
-            <strong>Hinweis:</strong> Die in eckigen Klammern stehenden Angaben müssen vor Veröffentlichung 
-            durch die tatsächlichen Daten ersetzt werden.
+          <p class="text-sm text-black/50 mt-8">
+            Stand: Januar 2026
           </p>
+          
         </div>
       </div>
     </div>
@@ -82,11 +100,11 @@ const description = 'Impressum und Angaben gemäß § 5 TMG für Laura Ziegler, 
     margin-bottom: 1rem;
   }
   .prose a {
-    color: #4630a3;
+    color: var(--color-coral);
     transition: color 0.2s ease;
   }
   .prose a:hover {
-    color: #ef5744;
+    color: #0f172a;
   }
   .prose hr {
     border-color: #e2e8f0;

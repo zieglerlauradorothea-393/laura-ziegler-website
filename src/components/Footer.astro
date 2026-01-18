@@ -12,6 +12,7 @@ const navLinks = [
 const legalLinks = [
   { href: '/impressum', label: 'Impressum' },
   { href: '/datenschutz', label: 'Datenschutz' },
+  { href: '/cookies', label: 'Cookies' },
 ];
 ---
 
@@ -94,7 +95,7 @@ const legalLinks = [
         <p class="text-black/50 text-sm">
           © {currentYear} Laura Ziegler
         </p>
-        <ul class="flex items-center gap-6" role="list">
+        <ul class="flex items-center gap-6 flex-wrap justify-center" role="list">
           {legalLinks.map((link) => (
             <li>
               <a href={link.href} class="text-black/50 hover:text-black transition-colors text-sm">

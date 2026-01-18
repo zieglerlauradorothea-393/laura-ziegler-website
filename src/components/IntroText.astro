@@ -1,37 +1,47 @@
 ---
-// Intro-Abschnitt – klar und persönlich
+// Intro-Abschnitt – klar, bunt und persönlich
 ---
 
 <section class="section bg-cream" style="background-color: var(--color-cream);">
   <div class="container">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left: Text -->
         <div>
-          <h2 class="text-black mb-6">
-            Ich mache lieber, als lange zu reden.
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-tight uppercase">
+            Ich arbeite lieber, als lange zu reden.
           </h2>
           
-          <p class="text-lg text-black/80 leading-relaxed mb-6">
-            Ich koordiniere und halte den Überblick – bis aus Ideen Ergebnisse werden.
+          <p class="text-xl text-black/80 leading-relaxed mb-8">
+            Ich koordiniere und halte den Überblick – bis aus Ideen <strong>Ergebnisse</strong> werden.
           </p>
           
-          <a href="/und-sonst-so" class="inline-flex items-center gap-2 font-bold text-black hover:underline underline-offset-4">
-            <span>Kurz zu mir</span>
-            <span>→</span>
+          <a href="/und-sonst-so" class="group inline-flex items-center gap-3 px-6 py-4 font-bold text-black text-lg rounded-full hover:scale-105 transition-all shadow-lg hover:shadow-xl" style="background-color: var(--color-coral);">
+            <span>Mehr über mich</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
         
-        <!-- Right: Profile Card -->
+        <!-- Right: Profile Card Stack -->
         <div class="relative">
-          <!-- Farbiger Shape hinter der Card -->
-          <div class="absolute -inset-4 rounded-3xl transform rotate-2 z-0" style="background-color: var(--color-mint);" aria-hidden="true"></div>
+          <!-- Hinterer Shape (gelb, gedreht) -->
+          <div class="absolute -inset-2 rounded-3xl transform -rotate-3 z-0" style="background-color: var(--color-yellow);" aria-hidden="true"></div>
           
-          <div class="relative bg-white rounded-2xl p-8 z-10">
-            <h3 class="text-xl font-bold text-black mb-4 uppercase">
+          <!-- Mittlerer Shape (mint, anders gedreht) -->
+          <div class="absolute -inset-3 rounded-3xl transform rotate-2 z-0" style="background-color: var(--color-mint);" aria-hidden="true"></div>
+          
+          <!-- Card -->
+          <div class="relative bg-white rounded-2xl p-8 z-10 shadow-lg">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-3 h-3 rounded-full" style="background-color: var(--color-coral);"></div>
+              <div class="w-3 h-3 rounded-full" style="background-color: var(--color-yellow);"></div>
+              <div class="w-3 h-3 rounded-full" style="background-color: var(--color-mint);"></div>
+            </div>
+            
+            <h3 class="text-2xl font-black text-black mb-4 uppercase">
               Ich bin Laura Ziegler
             </h3>
-            <p class="text-lg text-black/80 leading-relaxed mb-4">
+            <p class="text-xl text-black/90 leading-relaxed mb-4 font-medium">
               Projekt- und Veranstaltungsmanagerin.
             </p>
             <p class="text-black/70 leading-relaxed">
@@ -39,11 +49,11 @@
             </p>
             
             <!-- Location badge -->
-            <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-pink rounded-full" style="background-color: var(--color-pink);">
-              <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <div class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-black/10" style="background-color: var(--color-pink);">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
               </svg>
-              <span class="font-semibold text-black text-sm">Bremen & Umgebung</span>
+              <span class="font-bold text-black">Bremen & Umgebung</span>
             </div>
           </div>
         </div>
