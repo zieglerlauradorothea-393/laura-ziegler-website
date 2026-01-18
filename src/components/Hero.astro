@@ -14,18 +14,18 @@ const {
   tags = [], 
   showCta = true,
   heroImage = '/images/laura-hero.jpeg',
-  bgColor = 'coral'
+  bgColor = 'lavender'
 } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden bg-${bgColor} min-h-[85vh] flex items-center`} style={`background-color: var(--color-${bgColor});`}>
-  <!-- Wellige Linie oben (optional) -->
-  <div class="absolute top-0 left-0 right-0 h-3 bg-pink" style="background-color: var(--color-pink);"></div>
+<section class="relative overflow-hidden min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
+  <!-- Wellige Linie oben -->
+  <div class="absolute top-0 left-0 right-0 h-3 z-30" style="background-color: var(--color-coral);"></div>
   
-  <div class="container relative z-10 py-16 md:py-24">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Text Content -->
-      <div class="order-2 md:order-1">
+  <div class="container py-16 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+      <!-- Text Content - IMMER zuerst im DOM, auf Desktop links -->
+      <div class="flex-1 relative z-20">
         <!-- Tags -->
         {tags.length > 0 && (
           <div class="flex flex-wrap gap-2 mb-6">
@@ -65,23 +65,25 @@ const {
         )}
       </div>
       
-      <!-- Photo with Shape -->
-      <div class="order-1 md:order-2 relative flex justify-center">
-        <!-- Farbiger Shape hinter dem Foto -->
-        <div 
-          class="absolute w-[90%] h-[95%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[60%_40%_30%_70%/60%_30%_70%_40%]"
-          style="background-color: var(--color-lavender);"
-          aria-hidden="true"
-        ></div>
-        
-        <!-- Foto -->
-        <img 
-          src={heroImage}
-          alt="Laura Ziegler"
-          class="relative z-10 w-full max-w-md rounded-3xl object-cover object-top"
-          style="aspect-ratio: 3/4;"
-          loading="eager"
-        />
+      <!-- Photo with Shape - auf Desktop rechts -->
+      <div class="flex-shrink-0 flex justify-center md:justify-end">
+        <div class="relative w-64 md:w-80 lg:w-96">
+          <!-- Farbiger Shape hinter dem Foto -->
+          <div 
+            class="absolute -inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
+            style="background-color: var(--color-coral);"
+            aria-hidden="true"
+          ></div>
+          
+          <!-- Foto -->
+          <img 
+            src={heroImage}
+            alt="Laura Ziegler"
+            class="relative z-10 w-full rounded-3xl object-cover object-top"
+            style="aspect-ratio: 3/4;"
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
   </div>

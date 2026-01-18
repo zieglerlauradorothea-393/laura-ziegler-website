@@ -10,12 +10,12 @@ const { showHeading = true, variant = 'default' } = Astro.props;
 
 const contactInfo = {
   email: 'zieglerlauradorothea@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/laura-ziegler',
+  linkedin: 'https://www.linkedin.com/in/laura-ziegler-19a6321a3/',
   location: 'Bremen & Umgebung',
 };
 ---
 
-<section class={`py-16 md:py-24 bg-coral ${variant === 'compact' ? 'py-12' : ''}`} style="background-color: var(--color-coral);" id="kontakt-panel">
+<section class={`py-16 md:py-24 bg-pink ${variant === 'compact' ? 'py-12' : ''}`} style="background-color: var(--color-pink);" id="kontakt-panel">
   <div class="container">
     <div class="max-w-3xl mx-auto">
       {showHeading && (
@@ -34,7 +34,7 @@ const contactInfo = {
         <div class="flex flex-col md:flex-row gap-6 items-center">
           <!-- Linke Seite: Text -->
           <div class="flex-shrink-0 text-center md:text-left">
-            <div class="inline-block bg-pink rounded-2xl px-6 py-4" style="background-color: var(--color-pink);">
+            <div class="inline-block bg-lavender rounded-2xl px-6 py-4" style="background-color: var(--color-lavender);">
               <span class="font-bold text-black text-lg uppercase">Schreib mir</span>
             </div>
           </div>

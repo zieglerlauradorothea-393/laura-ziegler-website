@@ -1,5 +1,5 @@
 ---
-// Die 3 LinkedIn-Posts als „Projekt-Impulse" – klar und persönlich
+// Die 3 LinkedIn-Posts als „Projekt-Impulse" – ohne Nummerierungen
 
 interface ImpulsePost {
   id: string;
@@ -78,15 +78,11 @@ const posts: ImpulsePost[] = [
     </div>
     
     <div class="grid gap-6 md:grid-cols-3">
-      {posts.map((post, index) => (
+      {posts.map((post) => (
         <article 
           class="rounded-2xl p-6 md:p-8"
           style={`background-color: var(--color-${post.color});`}
         >
-          <span class="inline-block px-3 py-1 bg-white/50 rounded-full text-xs font-bold uppercase mb-4">
-            0{index + 1}
-          </span>
-          
           <h3 class="text-xl font-bold text-black mb-4 uppercase">
             {post.title}
           </h3>

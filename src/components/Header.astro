@@ -10,7 +10,7 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-pink" style="background-color: var(--color-pink);">
+<header class="fixed top-0 left-0 right-0 z-50 bg-mint" style="background-color: var(--color-mint);">
   <nav class="container flex items-center justify-between h-16 md:h-20" aria-label="Hauptnavigation">
     <!-- Logo / Name -->
     <a 
@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
       class="group flex items-center gap-3 font-extrabold text-xl text-black hover:opacity-80 transition-opacity"
       aria-label="Laura Ziegler – Startseite"
     >
-      <span class="italic">Laura Ziegler,</span>
+      <span class="text-coral" style="color: var(--color-coral);">Laura Ziegler</span>
     </a>
     
     <!-- Desktop Navigation -->
@@ -64,8 +64,8 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Menu -->
   <div 
     id="mobile-menu" 
-    class="md:hidden hidden bg-pink"
-    style="background-color: var(--color-pink);"
+    class="md:hidden hidden bg-mint"
+    style="background-color: var(--color-mint);"
     aria-label="Mobile Navigation"
   >
     <ul class="container py-4 space-y-2" role="list">
