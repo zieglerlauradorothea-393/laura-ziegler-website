@@ -67,41 +67,41 @@ const posts: ImpulsePost[] = [
 
 <section class="section bg-white" id="impulse">
   <div class="container">
-    <div class="text-center mb-12">
-      <span class="tag mb-6">Gedanken</span>
+    <div class="text-center mb-8 md:mb-12">
+      <span class="tag mb-4 md:mb-6">Gedanken</span>
       <h2 class="text-black">
         Projekt-Impulse
       </h2>
-      <p class="text-lg text-black/70 max-w-2xl mx-auto mt-4">
+      <p class="text-base md:text-lg text-black/70 max-w-2xl mx-auto mt-3 md:mt-4">
         Philosophie trifft Projektmanagement.
       </p>
     </div>
     
-    <div class="grid gap-6 md:grid-cols-3">
+    <div class="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
         <article 
-          class="rounded-2xl p-6 md:p-8"
+          class="rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8"
           style={`background-color: var(--color-${post.color});`}
         >
-          <h3 class="text-xl font-bold text-black mb-4 uppercase">
+          <h3 class="text-lg md:text-xl font-bold text-black mb-3 md:mb-4 uppercase">
             {post.title}
           </h3>
           
-          <div class="space-y-3 mb-6">
+          <div class="space-y-2 md:space-y-3 mb-4 md:mb-6">
             {post.content.map((paragraph) => (
-              <p class="text-black/80 leading-relaxed">{paragraph}</p>
+              <p class="text-black/80 leading-relaxed text-sm md:text-base">{paragraph}</p>
             ))}
           </div>
           
           <!-- Context Toggle -->
           <details class="group" id={`context-${post.id}`}>
-            <summary class="flex items-center gap-2 cursor-pointer text-sm font-bold text-black hover:underline list-none">
-              <svg class="w-4 h-4 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <summary class="flex items-center gap-2 cursor-pointer text-xs md:text-sm font-bold text-black hover:underline list-none">
+              <svg class="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-open:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
               {post.context.intro}
             </summary>
-            <div class="mt-3 pl-6 text-sm text-black/70 border-l-2 border-black/20">
+            <div class="mt-2 md:mt-3 pl-5 md:pl-6 text-xs md:text-sm text-black/70 border-l-2 border-black/20">
               {post.context.explanation}
             </div>
           </details>

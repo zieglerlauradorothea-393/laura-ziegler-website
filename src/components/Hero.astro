@@ -18,19 +18,19 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative overflow-hidden min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
+<section class="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
   <!-- Wellige Linie oben -->
-  <div class="absolute top-0 left-0 right-0 h-3 z-30" style="background-color: var(--color-coral);"></div>
+  <div class="absolute top-0 left-0 right-0 h-2 md:h-3 z-30" style="background-color: var(--color-coral);"></div>
   
-  <div class="container py-16 md:py-24">
+  <div class="container py-12 md:py-16 lg:py-24">
     <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
       <!-- Text Content - IMMER zuerst im DOM, auf Desktop links -->
       <div class="flex-1 relative z-20">
         <!-- Tags -->
         {tags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mb-6">
+          <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
             {tags.map((tag) => (
-              <span class="tag">
+              <span class="tag text-xs md:text-sm">
                 {tag}
               </span>
             ))}
@@ -38,39 +38,39 @@ const {
         )}
         
         <!-- Title -->
-        <h1 class="text-black mb-6">
+        <h1 class="text-black mb-4 md:mb-6">
           {title}
         </h1>
         
         <!-- Subtitle -->
         {subtitle && (
-          <p class="text-xl md:text-2xl text-black/80 leading-relaxed mb-8 max-w-lg font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-black/80 leading-relaxed mb-6 md:mb-8 max-w-lg font-medium">
             {subtitle}
           </p>
         )}
         
         <!-- CTA Buttons -->
         {showCta && (
-          <div class="flex flex-wrap gap-4">
-            <a href="/kontakt" class="btn-primary">
+          <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
+            <a href="/kontakt" class="btn-primary text-center justify-center">
               <span>Projekt anfragen</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a href="/#arbeitsweise" class="btn-secondary">
+            <a href="/#arbeitsweise" class="btn-secondary text-center justify-center">
               So arbeite ich
             </a>
           </div>
         )}
       </div>
       
-      <!-- Photo with Shape - auf Desktop rechts -->
+      <!-- Photo with Shape - auf Desktop rechts, auf Mobile kleiner -->
       <div class="flex-shrink-0 flex justify-center md:justify-end">
-        <div class="relative w-64 md:w-80 lg:w-96">
+        <div class="relative w-48 sm:w-56 md:w-64 lg:w-80 xl:w-96">
           <!-- Farbiger Shape hinter dem Foto -->
           <div 
-            class="absolute -inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
+            class="absolute -inset-3 md:-inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
             style="background-color: var(--color-coral);"
             aria-hidden="true"
           ></div>
@@ -79,7 +79,7 @@ const {
           <img 
             src={heroImage}
             alt="Laura Ziegler"
-            class="relative z-10 w-full rounded-3xl object-cover object-top"
+            class="relative z-10 w-full rounded-2xl md:rounded-3xl object-cover object-top"
             style="aspect-ratio: 3/4;"
             loading="eager"
           />

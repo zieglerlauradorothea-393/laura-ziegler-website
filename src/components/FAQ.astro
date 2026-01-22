@@ -41,28 +41,28 @@ const { items = defaultFAQs, title = 'Häufige Fragen', subtitle } = Astro.props
 <section class="section bg-white" id="faq">
   <div class="container">
     <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="tag mb-6">FAQ</span>
+      <div class="text-center mb-8 md:mb-12">
+        <span class="tag mb-4 md:mb-6">FAQ</span>
         <h2 class="text-black">
           {title}
         </h2>
         {subtitle && (
-          <p class="text-lg text-black/70 mt-4">{subtitle}</p>
+          <p class="text-base md:text-lg text-black/70 mt-3 md:mt-4">{subtitle}</p>
         )}
       </div>
       
-      <div class="space-y-3">
+      <div class="space-y-2 md:space-y-3">
         {items.map((faq) => (
-          <details class="group bg-cream rounded-2xl overflow-hidden" style="background-color: var(--color-cream);">
-            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-bold text-black hover:bg-gray transition-colors list-none" style="--tw-bg-opacity: 1;">
+          <details class="group bg-cream rounded-xl md:rounded-2xl overflow-hidden" style="background-color: var(--color-cream);">
+            <summary class="flex items-center justify-between gap-3 md:gap-4 p-4 md:p-6 cursor-pointer font-bold text-black hover:bg-gray transition-colors list-none text-sm md:text-base" style="--tw-bg-opacity: 1;">
               <span class="text-left">{faq.question}</span>
-              <span class="shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center transition-transform group-open:rotate-45">
-                <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <span class="shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center transition-transform group-open:rotate-45">
+                <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
               </span>
             </summary>
-            <div class="px-6 pb-6 text-black/70 leading-relaxed">
+            <div class="px-4 md:px-6 pb-4 md:pb-6 text-black/70 leading-relaxed text-sm md:text-base">
               {faq.answer}
             </div>
           </details>
