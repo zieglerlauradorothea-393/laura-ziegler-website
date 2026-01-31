@@ -369,6 +369,18 @@
     border-color: #ffa0b0;
     color: var(--color-black);
   }
+
+  .btn-bubble-blue {
+    background: var(--color-blue);
+    color: var(--color-black);
+    border-color: var(--color-blue);
+  }
+
+  .btn-bubble-blue:hover {
+    background: #5aa3f0;
+    border-color: #5aa3f0;
+    color: var(--color-black);
+  }
 }
 
 /* Farbige Cards wie bei Dear Monday Events */
