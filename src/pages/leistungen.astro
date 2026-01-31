@@ -99,7 +99,7 @@ const supportServices: SupportService[] = [
         </ol>
       </nav>
       
-      <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
         <div class="flex-1">
           <h1 class="text-black mb-6">Leistungen</h1>
           <p class="text-xl text-black/80 leading-relaxed font-medium max-w-xl">
@@ -107,10 +107,10 @@ const supportServices: SupportService[] = [
           </p>
         </div>
         
-        <!-- Hero Foto -->
-        <div class="flex-shrink-0 hidden md:block">
+        <!-- Hero Foto - erst ab lg sichtbar -->
+        <div class="flex-shrink-0 hidden lg:block">
           <div class="relative">
-            <div class="absolute -inset-4 rounded-3xl transform rotate-3 z-0" style="background-color: var(--color-pink);" aria-hidden="true"></div>
+            <div class="absolute -inset-3 lg:-inset-4 rounded-3xl transform rotate-3 z-0" style="background-color: var(--color-pink);" aria-hidden="true"></div>
             <img 
               src="/images/laura-leistungen.png" 
               alt="Laura Ziegler bei der Arbeit" 
@@ -227,11 +227,11 @@ const supportServices: SupportService[] = [
   </section>
 
   <!-- Match CTA mit Foto -->
-  <section class="py-12 md:py-16 bg-pink relative overflow-hidden" style="background-color: var(--color-pink);">
+  <section class="py-12 md:py-16 bg-pink" style="background-color: var(--color-pink);">
     <div class="container">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-        <!-- Foto links -->
-        <div class="hidden md:block relative">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+        <!-- Foto links - erst ab lg sichtbar -->
+        <div class="hidden lg:block relative">
           <div class="absolute -inset-3 rounded-full transform -rotate-6 z-0" style="background-color: var(--color-coral);" aria-hidden="true"></div>
           <img 
             src="/images/laura-match.jpeg" 
@@ -241,7 +241,7 @@ const supportServices: SupportService[] = [
         </div>
         
         <!-- Text -->
-        <div class="text-center md:text-left">
+        <div class="text-center lg:text-left">
           <h2 class="text-black mb-4 md:mb-6">Match?</h2>
           <a href="/kontakt" class="btn-primary">
             Projekt anfragen
