@@ -274,6 +274,101 @@
     cursor: default;
     user-select: none;
   }
+
+  /* Bubble Buttons - farbig, fun, sexy! */
+  .btn-bubble {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-bubble::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-bubble:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-bubble:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  .btn-bubble-coral {
+    background: var(--color-coral);
+    color: var(--color-white);
+    border-color: var(--color-coral);
+  }
+
+  .btn-bubble-coral:hover {
+    background: #ff5722;
+    border-color: #ff5722;
+    color: var(--color-white);
+  }
+
+  .btn-bubble-mint {
+    background: var(--color-mint);
+    color: var(--color-black);
+    border-color: var(--color-mint);
+  }
+
+  .btn-bubble-mint:hover {
+    background: #7bc9a8;
+    border-color: #7bc9a8;
+    color: var(--color-black);
+  }
+
+  .btn-bubble-lavender {
+    background: var(--color-lavender);
+    color: var(--color-black);
+    border-color: var(--color-lavender);
+  }
+
+  .btn-bubble-lavender:hover {
+    background: #b8a5f0;
+    border-color: #b8a5f0;
+    color: var(--color-black);
+  }
+
+  .btn-bubble-yellow {
+    background: var(--color-yellow);
+    color: var(--color-black);
+    border-color: var(--color-yellow);
+  }
+
+  .btn-bubble-yellow:hover {
+    background: #c4b84f;
+    border-color: #c4b84f;
+    color: var(--color-black);
+  }
+
+  .btn-bubble-pink {
+    background: var(--color-pink);
+    color: var(--color-black);
+    border-color: var(--color-pink);
+  }
+
+  .btn-bubble-pink:hover {
+    background: #ffa0b0;
+    border-color: #ffa0b0;
+    color: var(--color-black);
+  }
 }
 
 /* Farbige Cards wie bei Dear Monday Events */
