@@ -259,6 +259,21 @@
     border-color: var(--color-blue);
     color: var(--color-black);
   }
+
+  /* Hero Tags - farbig, nicht klickbar */
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: default;
+    user-select: none;
+  }
 }
 
 /* Farbige Cards wie bei Dear Monday Events */
@@ -319,5 +334,38 @@
 @media print {
   .no-print {
     display: none !important;
+  }
+}
+
+/* Mobile Optimierungen */
+@media (max-width: 640px) {
+  /* Buttons kleiner auf Mobile */
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Cards mit weniger Padding */
+  .card {
+    padding: 1rem;
+  }
+
+  /* Bessere Lesbarkeit für lange Wörter */
+  .break-words {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hyphens-auto {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
+
+/* Tablet Optimierungen */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
   }
 }
