@@ -6,6 +6,7 @@ interface Props {
   showCta?: boolean;
   heroImage?: string;
   bgColor?: string;
+  useLineBreaks?: boolean;
 }
 
 const { 
@@ -14,8 +15,18 @@ const {
   tags = [], 
   showCta = true,
   heroImage = '/images/laura-hero.jpeg',
-  bgColor = 'lavender'
+  bgColor = 'lavender',
+  useLineBreaks = false
 } = Astro.props;
+
+// Titel mit Zeilenumbrüchen formatieren
+const formatTitle = (t: string) => {
+  if (!useLineBreaks) return t;
+  return t
+    .replace('Projekte,', 'Projekte,<br/>')
+    .replace('die laufen.', 'die laufen.<br/>')
+    .replace('Veranstaltungen,', 'Veranstaltungen,<br/>');
+};
 ---
 
 <section class="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
@@ -28,8 +39,7 @@ const {
       <div class="flex-1 relative z-20">
         
         <!-- Title -->
-        <h1 class="text-black mb-4 md:mb-6">
-          {title}
+        <h1 class="text-black mb-4 md:mb-6" set:html={formatTitle(title)}>
         </h1>
         
         <!-- Subtitle -->
