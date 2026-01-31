@@ -99,7 +99,7 @@ const supportServices: SupportService[] = [
         </ol>
       </nav>
       
-      <div class="flex flex-col xl:flex-row xl:items-center gap-8 xl:gap-12">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
         <div class="flex-1">
           <h1 class="text-black mb-6">Leistungen</h1>
           <p class="text-xl text-black/80 leading-relaxed font-medium max-w-xl">
@@ -107,14 +107,14 @@ const supportServices: SupportService[] = [
           </p>
         </div>
         
-        <!-- Hero Foto - erst ab xl (1280px) sichtbar -->
-        <div class="flex-shrink-0 hidden xl:block">
-          <div class="relative">
-            <div class="absolute -inset-4 rounded-3xl transform rotate-3 z-0" style="background-color: var(--color-pink);" aria-hidden="true"></div>
+        <!-- Hero Foto - responsive für alle Geräte -->
+        <div class="flex-shrink-0 flex justify-center lg:justify-end mt-6 lg:mt-0">
+          <div class="relative w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80">
+            <div class="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-3xl transform rotate-3 z-0" style="background-color: var(--color-pink);" aria-hidden="true"></div>
             <img 
               src="/images/laura-leistungen.png" 
               alt="Laura Ziegler bei der Arbeit" 
-              class="relative z-10 w-80 rounded-2xl object-cover"
+              class="relative z-10 w-full rounded-2xl object-cover"
             />
           </div>
         </div>
@@ -229,19 +229,19 @@ const supportServices: SupportService[] = [
   <!-- Match CTA mit Foto -->
   <section class="py-12 md:py-16 bg-pink" style="background-color: var(--color-pink);">
     <div class="container">
-      <div class="flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-16">
-        <!-- Foto links - erst ab xl (1280px) sichtbar -->
-        <div class="hidden xl:block relative">
-          <div class="absolute -inset-3 rounded-full transform -rotate-6 z-0" style="background-color: var(--color-coral);" aria-hidden="true"></div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-16">
+        <!-- Foto links - responsive für alle Geräte -->
+        <div class="relative">
+          <div class="absolute -inset-2 sm:-inset-3 rounded-full transform -rotate-6 z-0" style="background-color: var(--color-coral);" aria-hidden="true"></div>
           <img 
             src="/images/laura-match.jpeg" 
             alt="Laura Ziegler" 
-            class="relative z-10 w-40 h-40 rounded-full object-cover border-4 border-white"
+            class="relative z-10 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white"
           />
         </div>
         
         <!-- Text -->
-        <div class="text-center xl:text-left">
+        <div class="text-center sm:text-left">
           <h2 class="text-black mb-4 md:mb-6">Match?</h2>
           <a href="/kontakt" class="btn-primary">
             Projekt anfragen
