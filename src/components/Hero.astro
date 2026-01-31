@@ -29,13 +29,13 @@ const formatTitle = (t: string) => {
 };
 ---
 
-<section class="relative min-h-[70vh] md:min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
+<section class="relative min-h-[70vh] xl:min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
   <!-- Wellige Linie oben -->
   <div class="absolute top-0 left-0 right-0 h-2 md:h-3 z-30" style="background-color: var(--color-coral);"></div>
   
-  <div class="container py-12 md:py-16 lg:py-24">
-    <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-      <!-- Text Content - IMMER zuerst im DOM, auf Desktop links -->
+  <div class="container py-12 md:py-16 xl:py-24">
+    <div class="flex flex-col xl:flex-row xl:items-center gap-8 xl:gap-12">
+      <!-- Text Content -->
       <div class="flex-1 relative z-20">
         
         <!-- Title -->
@@ -44,7 +44,7 @@ const formatTitle = (t: string) => {
         
         <!-- Subtitle -->
         {subtitle && (
-          <p class="text-lg md:text-xl lg:text-2xl text-black/80 leading-relaxed mb-6 md:mb-8 max-w-lg font-medium">
+          <p class="text-lg md:text-xl xl:text-2xl text-black/80 leading-relaxed mb-6 md:mb-8 max-w-lg font-medium">
             {subtitle}
           </p>
         )}
@@ -65,12 +65,12 @@ const formatTitle = (t: string) => {
         )}
       </div>
       
-      <!-- Photo with Shape - auf Desktop rechts, auf Tablet/Mobile zentriert -->
-      <div class="flex-shrink-0 flex justify-center lg:justify-end mt-8 lg:mt-0">
-        <div class="relative w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96">
+      <!-- Photo with Shape - nur auf großen Desktops (xl: 1280px+) -->
+      <div class="flex-shrink-0 hidden xl:flex justify-end">
+        <div class="relative w-80 2xl:w-96">
           <!-- Farbiger Shape hinter dem Foto -->
           <div 
-            class="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
+            class="absolute -inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
             style="background-color: var(--color-coral);"
             aria-hidden="true"
           ></div>
@@ -79,7 +79,7 @@ const formatTitle = (t: string) => {
           <img 
             src={heroImage}
             alt="Laura Ziegler"
-            class="relative z-10 w-full rounded-2xl md:rounded-3xl object-cover object-top"
+            class="relative z-10 w-full rounded-3xl object-cover object-top"
             style="aspect-ratio: 3/4;"
             loading="eager"
           />
