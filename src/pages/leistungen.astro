@@ -125,11 +125,11 @@ const supportServices: SupportService[] = [
   <!-- Main Services (2-column cards) -->
   <section class="section bg-cream" style="background-color: var(--color-cream);">
     <div class="container">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-6">
+      <div class="max-w-6xl mx-auto px-4 sm:px-0">
+        <div class="grid md:grid-cols-2 gap-6 justify-items-center">
           {mainServices.map((service) => (
             <article 
-              class="rounded-3xl p-6 md:p-8 flex flex-col"
+              class="rounded-3xl p-6 md:p-8 flex flex-col w-full max-w-md md:max-w-none"
               style={`background-color: var(--color-${service.color});`}
             >
               <!-- Header -->
