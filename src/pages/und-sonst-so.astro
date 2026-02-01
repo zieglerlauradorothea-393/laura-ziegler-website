@@ -35,9 +35,9 @@ const description = 'Über innere Struktur, Halt und Ausrichtung. Philosophie, A
           </p>
         </div>
         
-        <!-- Photo with Shape -->
-        <div class="flex-shrink-0 hidden md:flex justify-center md:justify-end">
-          <div class="relative w-56 md:w-64 lg:w-80">
+        <!-- Photo with Shape - responsive für alle Geräte -->
+        <div class="flex-shrink-0 flex justify-center md:justify-end mt-6 md:mt-0">
+          <div class="relative w-40 sm:w-48 md:w-56 lg:w-72">
             <div 
               class="absolute inset-0 scale-110 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
               style="background-color: var(--color-mint);"
@@ -46,7 +46,7 @@ const description = 'Über innere Struktur, Halt und Ausrichtung. Philosophie, A
             <img 
               src="/images/laura-yoga.png" 
               alt="Laura Ziegler beim Yoga"
-              class="relative z-10 rounded-3xl w-full object-cover"
+              class="relative z-10 rounded-2xl md:rounded-3xl w-full object-cover"
               style="aspect-ratio: 2/3;"
               loading="eager"
             />
@@ -67,26 +67,26 @@ const description = 'Über innere Struktur, Halt und Ausrichtung. Philosophie, A
         <h2 class="text-black mb-4 md:mb-6">
           Und wenn ich mal nichts organisieren will
         </h2>
-        <p class="text-base md:text-lg text-black/80 leading-relaxed">
+        <p class="text-base md:text-lg text-black/80 leading-relaxed mb-6 md:mb-8">
           Dann unterrichte ich Yoga.
         </p>
-      </div>
-      
-      <!-- Sticker-Foto (nur auf großen Screens) -->
-      <div class="hidden lg:block absolute bottom-4 right-8 xl:right-16">
-        <div class="relative">
-          <!-- Organischer Farbklecks -->
-          <div 
-            class="absolute -inset-4 scale-125"
-            style="background-color: var(--color-pink); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;"
-            aria-hidden="true"
-          ></div>
-          <!-- Foto -->
-          <img 
-            src="/images/laura-sticker.jpg" 
-            alt="Laura Ziegler" 
-            class="relative z-10 w-32 xl:w-40 h-auto rounded-2xl object-contain border-4 border-white shadow-lg"
-          />
+        
+        <!-- Sticker-Foto - responsive für alle Geräte -->
+        <div class="flex justify-center">
+          <div class="relative">
+            <!-- Organischer Farbklecks -->
+            <div 
+              class="absolute -inset-2 sm:-inset-3 md:-inset-4 scale-125"
+              style="background-color: var(--color-pink); border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;"
+              aria-hidden="true"
+            ></div>
+            <!-- Foto -->
+            <img 
+              src="/images/laura-sticker.jpg" 
+              alt="Laura Ziegler" 
+              class="relative z-10 w-24 sm:w-28 md:w-32 lg:w-40 h-auto rounded-xl md:rounded-2xl object-contain border-4 border-white shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </div>
