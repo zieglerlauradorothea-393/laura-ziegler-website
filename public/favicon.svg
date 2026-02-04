@@ -1,33 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Organische Blob-Formen überlagert -->
+  <!-- Haupt-Blob: Coral/Orange -->
+  <ellipse cx="15" cy="16" rx="14" ry="13" fill="#E07A5F"/>
   
-  <!-- Hintergrund-Blob: Coral (Hauptfarbe) -->
-  <path 
-    d="M16 2C24 2 30 7 30 14C30 21 26 30 18 30C10 30 2 24 2 16C2 8 8 2 16 2Z" 
-    fill="#E07A5F"
-  />
+  <!-- Akzent-Kreis oben rechts: Blau -->
+  <circle cx="25" cy="8" r="6" fill="#6BA3E8"/>
   
-  <!-- Akzent-Blob oben rechts: Mint -->
-  <path 
-    d="M22 3C27 4 29 8 28 12C27 16 23 14 20 12C17 10 17 2 22 3Z" 
-    fill="#88B7A3"
-  />
+  <!-- Akzent-Kreis unten links: Pink -->
+  <circle cx="7" cy="24" r="5" fill="#E8A0C8"/>
   
-  <!-- Akzent-Blob unten links: Gelb -->
-  <path 
-    d="M8 22C4 24 3 28 6 29C9 30 14 28 14 25C14 22 12 20 8 22Z" 
-    fill="#E6B85C"
-  />
-  
-  <!-- LZ Text -->
+  <!-- L in Gelb -->
   <text 
-    x="15" 
-    y="21" 
-    text-anchor="middle" 
+    x="9" 
+    y="22" 
     font-family="system-ui, -apple-system, sans-serif" 
-    font-weight="800" 
-    font-size="13" 
-    fill="white"
-    style="letter-spacing: -0.5px;"
-  >LZ</text>
+    font-weight="700" 
+    font-size="14" 
+    fill="#E6B85C"
+  >L</text>
+  
+  <!-- Z in Grün -->
+  <text 
+    x="16" 
+    y="22" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-weight="700" 
+    font-size="14" 
+    fill="#88B7A3"
+  >Z</text>
 </svg>
