@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 const title = 'Kontakt – Laura Ziegler, Projektmanagement Bremen';
 const description = 'Nimm Kontakt auf für Projektmanagement und Veranstaltungsorganisation in Bremen.';
+const canonicalURL = 'https://laura-ziegler.com/kontakt/';
 
 const contactInfo = {
   email: 'hallo@laura-ziegler.com',
@@ -11,7 +12,7 @@ const contactInfo = {
 };
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} canonical={canonicalURL} noIndex={true}>
   <!-- Hero mit Foto -->
   <section class="relative py-16 md:py-24 bg-pink" style="background-color: var(--color-pink);">
     <!-- Coral-Streifen oben -->

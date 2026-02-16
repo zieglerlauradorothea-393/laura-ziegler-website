@@ -42,7 +42,7 @@ const fullTitle = noTitleSuffix ? title : (title === siteName ? title : `${title
   <meta name="geo.region" content="DE-HB" />
   <meta name="geo.placename" content="Bremen" />
   {noIndex ? (
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="noindex, follow" />
   ) : (
     <meta name="robots" content="index, follow" />
   )}
