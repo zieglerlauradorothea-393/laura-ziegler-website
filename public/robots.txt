@@ -4,8 +4,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://laura-ziegler.com/sitemap-index.xml
+Sitemap: https://laura-ziegler.com/image-sitemap.xml
 
 # Disallow admin/internal paths (if any)
 Disallow: /api/

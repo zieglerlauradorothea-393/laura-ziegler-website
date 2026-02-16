@@ -5,6 +5,7 @@ interface Props {
   tags?: string[];
   showCta?: boolean;
   heroImage?: string;
+  heroAlt?: string;
   bgColor?: string;
   useLineBreaks?: boolean;
 }
@@ -15,6 +16,7 @@ const {
   tags = [], 
   showCta = true,
   heroImage = '/images/laura-hero.jpeg',
+  heroAlt = 'Laura Ziegler – Projektmanagerin aus Bremen',
   bgColor = 'lavender',
   useLineBreaks = false
 } = Astro.props;
@@ -76,13 +78,19 @@ const formatTitle = (t: string) => {
           ></div>
           
           <!-- Foto -->
-          <img 
-            src={heroImage}
-            alt="Laura Ziegler"
-            class="relative z-10 w-full rounded-2xl md:rounded-3xl object-cover object-top"
-            style="aspect-ratio: 3/4;"
-            loading="eager"
-          />
+          <figure class="relative z-10">
+            <img 
+              src={heroImage}
+              alt={heroAlt}
+              width="320"
+              height="427"
+              class="w-full rounded-2xl md:rounded-3xl object-cover object-top"
+              style="aspect-ratio: 3/4;"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <figcaption class="sr-only">Laura Ziegler – Projektmanagement Bremen</figcaption>
+          </figure>
         </div>
       </div>
     </div>
