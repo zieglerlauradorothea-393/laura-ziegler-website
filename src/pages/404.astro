@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Seite nicht gefunden – Laura Ziegler"
+  description="Die angeforderte Seite wurde nicht gefunden."
+  noIndex={true}
+>
+  <section class="section bg-cream min-h-[60vh] flex items-center" style="background-color: var(--color-cream);">
+    <div class="container text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-black mb-4">Seite nicht gefunden</h1>
+      <p class="text-black/70 mb-8 max-w-md mx-auto">
+        Die angeforderte Seite existiert nicht oder wurde verschoben.
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl text-white transition-transform hover:translate-y-[-2px]"
+        style="background-color: var(--color-coral);"
+      >
+        Zur Startseite
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -7,9 +7,16 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://laura-ziegler.com',
+  trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) =>
+      !page.includes('/impressum') &&
+      !page.includes('/datenschutz') &&
+      !page.includes('/cookies') &&
+      !page.includes('/404'),
+  })],
   compressHTML: true,
 });

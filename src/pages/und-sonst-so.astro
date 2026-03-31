@@ -7,8 +7,8 @@ const title = 'Und sonst so? – Laura Ziegler';
 const description = 'Über innere Struktur, Halt und Ausrichtung. Philosophie, Achtsamkeit und Projektmanagement.';
 
 // Hero-Bild für diese Seite
-const heroImage = '/images/laura-yoga.png';
-const heroImageAbsolute = 'https://laura-ziegler.com/images/laura-yoga.png';
+const heroImage = '/images/laura-yoga.jpg';
+const heroImageAbsolute = 'https://laura-ziegler.com/images/laura-yoga.jpg';
 
 // WebPage Schema mit primaryImageOfPage
 const webPageSchema = {
@@ -16,7 +16,7 @@ const webPageSchema = {
   '@type': 'WebPage',
   name: title,
   description: description,
-  url: 'https://laura-ziegler.com/und-sonst-so/',
+  url: 'https://laura-ziegler.com/und-sonst-so',
   inLanguage: 'de-DE',
   primaryImageOfPage: {
     '@type': 'ImageObject',
@@ -24,11 +24,21 @@ const webPageSchema = {
     caption: 'Laura Ziegler – Über mich und meine Arbeit in Bremen',
   },
 };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://laura-ziegler.com' },
+    { '@type': 'ListItem', position: 2, name: 'Und sonst so?', item: 'https://laura-ziegler.com/und-sonst-so' },
+  ],
+};
 ---
 
 <Layout title={title} description={description} ogImage={heroImage}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
   
   <!-- Hero -->

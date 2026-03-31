@@ -14,9 +14,9 @@
   
   <!-- Leistungen -->
   <url>
-    <loc>https://laura-ziegler.com/leistungen/</loc>
+    <loc>https://laura-ziegler.com/leistungen</loc>
     <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-leistungen.png</image:loc>
+      <image:loc>https://laura-ziegler.com/images/laura-leistungen.jpg</image:loc>
       <image:caption>Laura Ziegler – Projektmanagement-Leistungen in Bremen</image:caption>
       <image:title>Laura Ziegler – Leistungen im Projektmanagement</image:title>
     </image:image>
@@ -29,9 +29,9 @@
   
   <!-- Projekte -->
   <url>
-    <loc>https://laura-ziegler.com/projekte/</loc>
+    <loc>https://laura-ziegler.com/projekte</loc>
     <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-projekte.png</image:loc>
+      <image:loc>https://laura-ziegler.com/images/laura-projekte.jpg</image:loc>
       <image:caption>Laura Ziegler – Projekte und Erfahrungen im Projektmanagement Bremen</image:caption>
       <image:title>Laura Ziegler – Projekte und Erfahrungen</image:title>
     </image:image>
@@ -42,11 +42,21 @@
     </image:image>
   </url>
   
+  <!-- Kontakt -->
+  <url>
+    <loc>https://laura-ziegler.com/kontakt</loc>
+    <image:image>
+      <image:loc>https://laura-ziegler.com/images/laura-kontakt-neu.jpg</image:loc>
+      <image:caption>Laura Ziegler – Kontakt für Projektmanagement in Bremen</image:caption>
+      <image:title>Laura Ziegler – Kontakt</image:title>
+    </image:image>
+  </url>
+  
   <!-- Und sonst so -->
   <url>
-    <loc>https://laura-ziegler.com/und-sonst-so/</loc>
+    <loc>https://laura-ziegler.com/und-sonst-so</loc>
     <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-yoga.png</image:loc>
+      <image:loc>https://laura-ziegler.com/images/laura-yoga.jpg</image:loc>
       <image:caption>Laura Ziegler – Projektmanagerin und Yogalehrerin aus Bremen</image:caption>
       <image:title>Laura Ziegler – Über mich</image:title>
     </image:image>
