@@ -1,33 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import IntroText from '../components/IntroText.astro';
-import ExperiencePreview from '../components/ExperiencePreview.astro';
-import Principles from '../components/Principles.astro';
-import FAQ from '../components/FAQ.astro';
-import ContactPanel from '../components/ContactPanel.astro';
+import Leistungen from '../components/Leistungen.astro';
+import Erfahrung from '../components/Erfahrung.astro';
+import Kontakt from '../components/Kontakt.astro';
+import { site, hero, leistungen } from '../data/site';
 
-const title = 'Projekt- & Veranstaltungsmanagement Bremen | Kunst, Kultur, Bildung';
-const description = 'Projekt- und Veranstaltungsmanagement für Kunst & Kultur, Bildung und Kreativbranche – aus Bremen. Struktur, klare Kommunikation und verlässliche Abläufe für Projekte, die funktionieren.';
+const title = `${site.name} | ${site.role} ${site.city}`;
+const description =
+  'Projekt- und Veranstaltungsmanagement für Kunst, Kultur und Bildung in Bremen. Planung, Koordination, Fördermittel und Abrechnung – klar geplant und verlässlich umgesetzt.';
 
-// Hero-Bild für diese Seite
-const heroImage = '/images/laura-hero.jpeg';
-const heroImageAbsolute = 'https://laura-ziegler.com/images/laura-hero.jpeg';
+const portraitAbsolute = new URL(hero.image.src, site.url).href;
 
-// Schema.org JSON-LD for Person + WebSite
-const personData = {
+const person = {
   '@type': 'Person',
-  name: 'Laura Ziegler',
+  '@id': `${site.url}/#person`,
+  name: site.name,
   jobTitle: 'Projekt- und Veranstaltungsmanagerin',
-  description: 'Selbstständige Projektmanagerin für Kunst & Kultur, Bildung und Kreativbranche in Bremen.',
-  url: 'https://laura-ziegler.com',
-  image: heroImageAbsolute,
-  sameAs: [
-    'https://www.linkedin.com/in/laura-ziegler-19a6321a3/',
-  ],
+  url: site.url,
+  image: portraitAbsolute,
+  email: site.email,
+  sameAs: [site.linkedin],
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Bremen',
+    addressLocality: site.city,
     addressRegion: 'HB',
     addressCountry: 'DE',
   },
@@ -35,152 +31,57 @@ const personData = {
     'Projektmanagement',
     'Veranstaltungsmanagement',
     'Kulturmanagement',
+    'Fördermittel',
     'Eventorganisation',
-    'Stakeholder-Kommunikation',
   ],
 };
 
-const personSchema = {
+const schema = {
   '@context': 'https://schema.org',
-  ...personData,
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Laura Ziegler – Projektmanagement Bremen',
-  url: 'https://laura-ziegler.com',
-  description: description,
-  inLanguage: 'de-DE',
-  author: personData,
-};
-
-const webPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: title,
-  description: description,
-  url: 'https://laura-ziegler.com',
-  inLanguage: 'de-DE',
-  primaryImageOfPage: {
-    '@type': 'ImageObject',
-    url: heroImageAbsolute,
-    caption: 'Laura Ziegler – Projektmanagerin aus Bremen',
-  },
-  about: personData,
-};
-
-// FAQPage Schema
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
+    person,
     {
-      '@type': 'Question',
-      name: 'Für wen ist meine Arbeit gedacht?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ich arbeite mit Kultureinrichtungen, Bildungsträgern, Kreativagenturen und Veranstaltern zusammen – ob gemeinnützig oder gewerblich. Wichtig ist mir, dass das Projekt sinnvoll ist und Haltung hat.',
+      '@type': 'ProfessionalService',
+      '@id': `${site.url}/#service`,
+      name: `${site.name} – ${site.role}`,
+      description,
+      url: site.url,
+      image: portraitAbsolute,
+      email: site.email,
+      founder: { '@id': `${site.url}/#person` },
+      areaServed: { '@type': 'Country', name: 'Deutschland' },
+      address: person.address,
+      knowsLanguage: ['de', 'en'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Leistungen',
+        itemListElement: leistungen.map((l) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name: l.title },
+        })),
       },
     },
     {
-      '@type': 'Question',
-      name: 'Wie sieht eine typische Zusammenarbeit aus?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Das hängt vom Projekt ab. Manchmal begleite ich von der Idee bis zur Umsetzung, manchmal springe ich für eine bestimmte Phase ein. Ein kostenloses Erstgespräch klärt, was du brauchst.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Was kostet eine Zusammenarbeit?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Das richtet sich nach Umfang, Dauer und Art des Projekts. Ich arbeite mit Tagessätzen, Projektpauschalen oder stundenbasiert – je nachdem, was für dich am sinnvollsten ist.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Welche Aufgaben übernimmst du konkret?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Projektplanung und -steuerung, Veranstaltungsorganisation, Stakeholder-Kommunikation, Zeitpläne, Budgetkontrolle, Team-Koordination, Dokumentation – alles, was ein Projekt braucht, um zu funktionieren.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie schnell kannst du starten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Das hängt von meiner aktuellen Auslastung ab. Für dringende Projekte finde ich oft schnell eine Lösung. Am besten meldest du dich frühzeitig – dann können wir gut planen.',
-      },
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      name: `${site.name} – ${site.role}`,
+      url: site.url,
+      description,
+      inLanguage: 'de-DE',
+      author: { '@id': `${site.url}/#person` },
     },
   ],
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Laura Ziegler – Projektmanagement',
-  description: description,
-  url: 'https://laura-ziegler.com',
-  image: heroImageAbsolute,
-  email: 'hallo@laura-ziegler.com',
-  areaServed: {
-    '@type': 'GeoCircle',
-    geoMidpoint: { '@type': 'GeoCoordinates', latitude: 53.0793, longitude: 8.8017 },
-    geoRadius: '100000',
-  },
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Bremen',
-    addressRegion: 'HB',
-    addressCountry: 'DE',
-  },
-  priceRange: '$$',
-  knowsLanguage: ['de', 'en'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Leistungen',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Projektmanagement' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Veranstaltungsmanagement' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kulturmanagement' } },
-    ],
-  },
 };
 ---
 
-<Layout title={title} description={description} ogType="website" ogImage={heroImage} noTitleSuffix={true}>
+<Layout title={title} description={description}>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <link rel="preload" as="image" href={hero.image.src} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
-  
-  <!-- Hero Section mit großem Bild -->
-  <Hero 
-    title="Projekte, die laufen. Veranstaltungen, die wirken."
-    subtitle="Projekt- und Veranstaltungsmanagement in Bremen für Kunst & Kultur, Bildung und Kreativprojekte."
-    heroImage={heroImage}
-    heroAlt="Laura Ziegler – Projektmanagerin für Kunst, Kultur und Bildung in Bremen"
-    useLineBreaks={true}
-  />
-  
-  <!-- Intro / Positioning -->
-  <IntroText />
-  
-  <!-- Experience Preview -->
-  <ExperiencePreview />
-  
-  <!-- Principles / How I Work -->
-  <Principles />
-  
-  <!-- FAQ Section -->
-  <FAQ />
 
-  <!-- Contact CTA -->
-  <ContactPanel />
+  <Hero />
+  <Leistungen />
+  <Erfahrung />
+  <Kontakt />
 </Layout>

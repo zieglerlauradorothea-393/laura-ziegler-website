@@ -1,98 +1,28 @@
 ---
-interface Props {
-  title: string;
-  subtitle?: string;
-  tags?: string[];
-  showCta?: boolean;
-  heroImage?: string;
-  heroAlt?: string;
-  bgColor?: string;
-  useLineBreaks?: boolean;
-}
-
-const { 
-  title, 
-  subtitle, 
-  tags = [], 
-  showCta = true,
-  heroImage = '/images/laura-hero.jpeg',
-  heroAlt = 'Laura Ziegler – Projektmanagerin aus Bremen',
-  bgColor = 'lavender',
-  useLineBreaks = false
-} = Astro.props;
-
-// Titel mit Zeilenumbrüchen formatieren
-const formatTitle = (t: string) => {
-  if (!useLineBreaks) return t;
-  return t
-    .replace('Projekte,', 'Projekte,<br/>')
-    .replace('die laufen.', 'die laufen.<br/>')
-    .replace('Veranstaltungen,', 'Veranstaltungen,<br/>');
-};
+import { site, hero, mailto } from '../data/site';
 ---
 
-<section class="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[85vh] flex items-center" style={`background-color: var(--color-${bgColor});`}>
-  <!-- Wellige Linie oben -->
-  <div class="absolute top-0 left-0 right-0 h-2 md:h-3 z-30" style="background-color: var(--color-coral);"></div>
-  
-  <div class="container py-12 md:py-16 lg:py-24">
-    <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-      <!-- Text Content -->
-      <div class="flex-1 relative z-20">
-        
-        <!-- Title -->
-        <h1 class="text-black mb-4 md:mb-6" set:html={formatTitle(title)}>
-        </h1>
-        
-        <!-- Subtitle -->
-        {subtitle && (
-          <p class="text-lg md:text-xl lg:text-2xl text-black/80 leading-relaxed mb-6 md:mb-8 max-w-lg font-medium">
-            {subtitle}
-          </p>
-        )}
-        
-        <!-- CTA Buttons - farbig -->
-        {showCta && (
-          <div class="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
-            <a href="/kontakt" class="btn-bubble btn-bubble-blue text-center justify-center">
-              <span>Projekt anfragen</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <a href="/#arbeitsweise" class="btn-bubble btn-bubble-yellow text-center justify-center">
-              So arbeite ich
-            </a>
-          </div>
-        )}
-      </div>
-      
-      <!-- Photo with Shape - responsive für alle Geräte -->
-      <div class="flex-shrink-0 flex justify-center lg:justify-end mt-8 lg:mt-0">
-        <div class="relative w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80">
-          <!-- Farbiger Shape hinter dem Foto -->
-          <div 
-            class="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] z-0"
-            style="background-color: var(--color-coral);"
-            aria-hidden="true"
-          ></div>
-          
-          <!-- Foto -->
-          <figure class="relative z-10">
-            <img 
-              src={heroImage}
-              alt={heroAlt}
-              width="320"
-              height="427"
-              class="w-full rounded-2xl md:rounded-3xl object-cover object-top"
-              style="aspect-ratio: 3/4;"
-              loading="eager"
-              fetchpriority="high"
-            />
-            <figcaption class="sr-only">Laura Ziegler – Projektmanagement Bremen</figcaption>
-          </figure>
-        </div>
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <!-- Auf dem Desktop eine Zeile; auf dem Handy rückt „Bremen“ ohne Trennpunkt in die zweite Zeile -->
+      <p class="eyebrow"><span class="eyebrow-role">{site.role}</span><span class="eyebrow-sep"> · </span><span class="eyebrow-city">{site.city}</span></p>
+      <h1 class="hero-intro">{hero.intro}</h1>
+      <div class="hero-actions">
+        <a class="button" href={mailto}>{hero.cta}</a>
       </div>
     </div>
+
+    <figure class="hero-portrait">
+      <div class="portrait-frame">
+        <img
+          src={hero.image.src}
+          alt={hero.image.alt}
+          width={hero.image.width}
+          height={hero.image.height}
+          fetchpriority="high"
+        />
+      </div>
+    </figure>
   </div>
 </section>

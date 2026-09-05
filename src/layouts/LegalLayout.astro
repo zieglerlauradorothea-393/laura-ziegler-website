@@ -1,0 +1,26 @@
+---
+// Rahmen für Impressum und Datenschutz: orangefarbener Titelblock, darunter
+// die Abschnitte als zweispaltiges Raster (Überschrift links, Text rechts).
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  updated: string;
+}
+
+const { title, description, heading, updated } = Astro.props;
+---
+
+<Layout title={title} description={description} noIndex={true} mainClass="legal-main">
+  <header class="legal-title">
+    <p class="eyebrow">Rechtliches</p>
+    <h1>{heading}</h1>
+  </header>
+
+  <article class="legal-prose">
+    <slot />
+    <p class="legal-date">Stand: {updated}</p>
+  </article>
+</Layout>

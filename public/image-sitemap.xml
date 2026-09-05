@@ -1,70 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Startseite -->
   <url>
     <loc>https://laura-ziegler.com/</loc>
     <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-hero.jpeg</image:loc>
-      <image:caption>Laura Ziegler – Projektmanagerin für Kunst, Kultur und Bildung in Bremen</image:caption>
-      <image:title>Laura Ziegler – Projektmanagement Bremen</image:title>
+      <image:loc>https://laura-ziegler.com/images/laura-ziegler.jpg</image:loc>
+      <image:caption>Laura Ziegler, Projekt- und Veranstaltungsmanagerin in Bremen</image:caption>
+      <image:title>Laura Ziegler | Projekt- &amp; Veranstaltungsmanagement Bremen</image:title>
     </image:image>
-  </url>
-  
-  <!-- Leistungen -->
-  <url>
-    <loc>https://laura-ziegler.com/leistungen</loc>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-leistungen.jpg</image:loc>
-      <image:caption>Laura Ziegler – Projektmanagement-Leistungen in Bremen</image:caption>
-      <image:title>Laura Ziegler – Leistungen im Projektmanagement</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-match.jpeg</image:loc>
-      <image:caption>Laura Ziegler – Projektmanagerin Bremen, bereit für dein Projekt</image:caption>
-      <image:title>Laura Ziegler – Match für dein Projekt</image:title>
-    </image:image>
-  </url>
-  
-  <!-- Projekte -->
-  <url>
-    <loc>https://laura-ziegler.com/projekte</loc>
     <image:image>
       <image:loc>https://laura-ziegler.com/images/laura-projekte.jpg</image:loc>
-      <image:caption>Laura Ziegler – Projekte und Erfahrungen im Projektmanagement Bremen</image:caption>
-      <image:title>Laura Ziegler – Projekte und Erfahrungen</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-durchzieht.jpg</image:loc>
-      <image:caption>Laura Ziegler – Projektmanagerin mit rotem Faden durch alle Projekte</image:caption>
-      <image:title>Laura Ziegler – Der rote Faden</image:title>
+      <image:caption>Laura Ziegler vor einer farbigen Wand in Bremen</image:caption>
+      <image:title>Laura Ziegler – Erfahrung in Projektleitung, Kultur- und Veranstaltungsmanagement, Lehre</image:title>
     </image:image>
   </url>
-  
-  <!-- Kontakt -->
-  <url>
-    <loc>https://laura-ziegler.com/kontakt</loc>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-kontakt-neu.jpg</image:loc>
-      <image:caption>Laura Ziegler – Kontakt für Projektmanagement in Bremen</image:caption>
-      <image:title>Laura Ziegler – Kontakt</image:title>
-    </image:image>
-  </url>
-  
-  <!-- Und sonst so -->
-  <url>
-    <loc>https://laura-ziegler.com/und-sonst-so</loc>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-yoga.jpg</image:loc>
-      <image:caption>Laura Ziegler – Projektmanagerin und Yogalehrerin aus Bremen</image:caption>
-      <image:title>Laura Ziegler – Über mich</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://laura-ziegler.com/images/laura-sticker.jpg</image:loc>
-      <image:caption>Laura Ziegler – Yogalehrerin und Projektmanagerin aus Bremen</image:caption>
-      <image:title>Laura Ziegler – Yoga und Achtsamkeit</image:title>
-    </image:image>
-  </url>
-  
 </urlset>

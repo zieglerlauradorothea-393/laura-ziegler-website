@@ -1,0 +1,26 @@
+---
+import { erfahrung } from '../data/site';
+---
+
+<section class="about section-shell" id="erfahrung">
+  <div class="about-photos">
+    <figure class="about-photo">
+      <img
+        src={erfahrung.image.src}
+        alt={erfahrung.image.alt}
+        width={erfahrung.image.width}
+        height={erfahrung.image.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+  </div>
+
+  <div class="about-copy">
+    <p class="eyebrow">Erfahrung</p>
+    <h2>
+      {erfahrung.lines.map((line) => <span>{line}</span>)}
+    </h2>
+    <p>{erfahrung.text}</p>
+  </div>
+</section>

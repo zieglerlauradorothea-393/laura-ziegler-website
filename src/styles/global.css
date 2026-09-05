@@ -1,478 +1,754 @@
-@import "tailwindcss";
+/* ============================================================
+   LAURA ZIEGLER – One-Pager
+   Farben: Orange, Blau, Creme, Tinte. Eine Systemschrift.
+   ============================================================ */
 
-/* ========================================
-   LAURA ZIEGLER – Design System
-   KLAR, PERSÖNLICH, MUTIG
-   Inspiriert von Dear Monday
-   Keine Gradienten – solide Farben!
-   ======================================== */
-
-@theme {
-  /* Hauptfarben - solide, keine Gradienten */
-  --color-coral: #ff6b35;
-  --color-coral-light: #fff0eb;
-  --color-pink: #ffb6c1;
-  --color-pink-bright: #ff69b4;
-  --color-lavender: #c9b8ff;
-  --color-lavender-light: #f0ebff;
-  --color-mint: #98d4bb;
-  --color-mint-dark: #2d8a5f;
-  --color-yellow: #D4C75F;
-  --color-blue: #6eb5ff;
-  
-  /* Neutrals */
-  --color-cream: #f5f5f0;
-  --color-gray-light: #f0f0eb;
-  --color-gray: #e5e5e0;
-  --color-black: #1a1a1a;
-  --color-white: #ffffff;
-
-  /* Typography */
-  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-
-  /* Spacing */
-  --spacing-section: 5rem;
-  --spacing-section-mobile: 3rem;
-
-  /* Border radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
-  --radius-full: 9999px;
+:root {
+  --ink: #11110f;
+  --cream: #fff4df;
+  --orange: #fa4b0b;
+  --blue: #2812bd;
+  --line: #11110f3d;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --action-font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.02rem);
+  --action-radius: 0.4rem;
+  --page-gutter: clamp(1.25rem, 3.5vw, 4.5rem);
+  --page-width: 100rem;
+  --header-height: 5.25rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Base styles */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: var(--font-sans);
-    color: var(--color-black);
-    background-color: var(--color-white);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--color-black);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-  }
-
-  h1 {
-    font-size: clamp(2.2rem, 6vw + 0.8rem, 4.5rem);
-  }
-
-  h2 {
-    font-size: clamp(1.75rem, 5vw + 0.5rem, 3.5rem);
-  }
-
-  h3 {
-    font-size: clamp(1.25rem, 3vw + 0.25rem, 2rem);
-  }
-
-  a {
-    color: var(--color-black);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  a:hover {
-    color: var(--color-coral);
-  }
-
-  ::selection {
-    background-color: var(--color-pink);
-    color: var(--color-black);
-  }
-
-  :focus-visible {
-    outline: 3px solid var(--color-black);
-    outline-offset: 2px;
-  }
+* {
+  box-sizing: border-box;
 }
 
-/* Component utilities */
-@layer components {
-  /* Primary button - Schwarz */
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-white);
-    background: var(--color-black);
-    border-radius: var(--radius-full);
-    transition: all 0.2s ease;
-  }
-
-  .btn-primary:hover {
-    background: #333;
-    color: var(--color-white);
-    transform: translateY(-2px);
-  }
-
-  /* Secondary button - Weiß mit Border */
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-black);
-    background: var(--color-white);
-    border: 2px solid var(--color-black);
-    border-radius: var(--radius-full);
-    transition: all 0.2s ease;
-  }
-
-  .btn-secondary:hover {
-    background: var(--color-black);
-    color: var(--color-white);
-  }
-
-  /* Card styles */
-  .card {
-    background: var(--color-white);
-    border-radius: var(--radius-2xl);
-    padding: 1.5rem;
-    transition: all 0.2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-  }
-
-  /* Section styles */
-  .section {
-    padding: var(--spacing-section-mobile) 0;
-  }
-
-  @media (min-width: 768px) {
-    .section {
-      padding: var(--spacing-section) 0;
-    }
-  }
-
-  /* Farbige Section-Hintergründe - SOLIDE */
-  .section-coral {
-    background: var(--color-coral);
-  }
-
-  .section-pink {
-    background: var(--color-pink);
-  }
-
-  .section-lavender {
-    background: var(--color-lavender);
-  }
-
-  .section-mint {
-    background: var(--color-mint);
-  }
-
-  .section-cream {
-    background: var(--color-cream);
-  }
-
-  .section-gray {
-    background: var(--color-gray-light);
-  }
-
-  /* Container */
-  .container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      padding: 0 2rem;
-    }
-  }
-
-  /* Tag/Badge styles */
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--color-black);
-    background: var(--color-white);
-    color: var(--color-black);
-  }
-
-  .tag-coral {
-    background: var(--color-coral);
-    border-color: var(--color-coral);
-    color: var(--color-black);
-  }
-
-  .tag-pink {
-    background: var(--color-pink);
-    border-color: var(--color-pink);
-    color: var(--color-black);
-  }
-
-  .tag-lavender {
-    background: var(--color-lavender);
-    border-color: var(--color-lavender);
-    color: var(--color-black);
-  }
-
-  .tag-mint {
-    background: var(--color-mint);
-    border-color: var(--color-mint);
-    color: var(--color-black);
-  }
-
-  .tag-yellow {
-    background: var(--color-yellow);
-    border-color: var(--color-yellow);
-    color: var(--color-black);
-  }
-
-  .tag-blue {
-    background: var(--color-blue);
-    border-color: var(--color-blue);
-    color: var(--color-black);
-  }
-
-  /* Hero Tags - farbig, nicht klickbar */
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-full);
-    border: none;
-    cursor: default;
-    user-select: none;
-  }
-
-  /* Bubble Buttons - farbig, fun, sexy! */
-  .btn-bubble {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-full);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 3px solid transparent;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-bubble::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-full);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .btn-bubble:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-bubble:active {
-    transform: translateY(-1px) scale(0.98);
-  }
-
-  .btn-bubble-coral {
-    background: var(--color-coral);
-    color: var(--color-white);
-    border-color: var(--color-coral);
-  }
-
-  .btn-bubble-coral:hover {
-    background: #ff5722;
-    border-color: #ff5722;
-    color: var(--color-white);
-  }
-
-  .btn-bubble-mint {
-    background: var(--color-mint);
-    color: var(--color-black);
-    border-color: var(--color-mint);
-  }
-
-  .btn-bubble-mint:hover {
-    background: #7bc9a8;
-    border-color: #7bc9a8;
-    color: var(--color-black);
-  }
-
-  .btn-bubble-lavender {
-    background: var(--color-lavender);
-    color: var(--color-black);
-    border-color: var(--color-lavender);
-  }
-
-  .btn-bubble-lavender:hover {
-    background: #b8a5f0;
-    border-color: #b8a5f0;
-    color: var(--color-black);
-  }
-
-  .btn-bubble-yellow {
-    background: var(--color-yellow);
-    color: var(--color-black);
-    border-color: var(--color-yellow);
-  }
-
-  .btn-bubble-yellow:hover {
-    background: #c4b84f;
-    border-color: #c4b84f;
-    color: var(--color-black);
-  }
-
-  .btn-bubble-pink {
-    background: var(--color-pink);
-    color: var(--color-black);
-    border-color: var(--color-pink);
-  }
-
-  .btn-bubble-pink:hover {
-    background: #ffa0b0;
-    border-color: #ffa0b0;
-    color: var(--color-black);
-  }
-
-  .btn-bubble-blue {
-    background: var(--color-blue);
-    color: var(--color-black);
-    border-color: var(--color-blue);
-  }
-
-  .btn-bubble-blue:hover {
-    background: #5aa3f0;
-    border-color: #5aa3f0;
-    color: var(--color-black);
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
-/* Farbige Cards wie bei Dear Monday Events */
-.card-coral {
-  background: var(--color-coral);
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-.card-pink {
-  background: var(--color-pink);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.card-lavender {
-  background: var(--color-lavender);
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.card-mint {
-  background: var(--color-mint);
+::selection {
+  background: var(--blue);
+  color: #fff;
 }
 
-.card-yellow {
-  background: var(--color-yellow);
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
 }
 
-.card-blue {
-  background: var(--color-blue);
+/* ---------- Skip-Link ---------- */
+.skip-link {
+  position: fixed;
+  top: -5rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--ink);
+  color: #fff;
+}
+.skip-link:focus {
+  top: 1rem;
 }
 
-/* Organische Shape für Foto-Hintergrund */
-.blob-shape {
+/* ---------- Kopfzeile ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  isolation: isolate;
+  height: var(--header-height);
+  background: var(--orange);
+}
+.site-header::after {
+  content: "";
   position: absolute;
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 2px;
+  background: var(--blue);
+  transform-origin: 0;
+  animation: header-rule-in 0.85s 80ms var(--ease-out) both;
+}
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+  animation: header-content-in 0.6s var(--ease-out) both;
 }
 
-/* Wellige Trennlinie wie bei Dear Monday */
-.wave-divider {
+.wordmark {
   position: relative;
-  height: 40px;
-  background-repeat: repeat-x;
-  background-size: 100px 40px;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.25rem;
+  margin-left: -0.75rem;
+  padding: 0 0.75rem;
+  border-radius: var(--action-radius);
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.wordmark::before {
+  content: "";
+  position: absolute;
+  inset: 0.25rem 0;
+  z-index: -1;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: 100%;
+  transition: transform 0.36s var(--ease-out);
+}
+.wordmark span {
+  color: var(--blue);
+  font-size: clamp(1.12rem, 1vw + 0.8rem, 1.38rem);
+  font-weight: 800;
+  letter-spacing: 0.065em;
+  transition:
+    color 0.18s ease,
+    letter-spacing 0.36s var(--ease-out),
+    transform 0.36s var(--ease-out);
+}
+.wordmark:hover::before,
+.wordmark:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: 0;
+}
+.wordmark:hover span,
+.wordmark:focus-visible span {
+  color: var(--cream);
+  letter-spacing: 0.085em;
+  transform: translateX(0.08rem);
 }
 
-/* Respect user preferences */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  font-size: clamp(1.08rem, 0.55vw + 0.9rem, 1.25rem);
+  font-weight: 700;
+}
+.site-nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.25rem;
+  color: var(--ink);
+  line-height: 1;
+  transition: transform 0.24s var(--ease-out);
+}
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.65rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 100%;
+  transition: transform 0.28s var(--ease-out);
+}
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: 0;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  transform: translateY(-1px);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--orange);
+  min-height: calc(100svh - var(--header-height));
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(22rem, 0.98fr);
+  align-items: center;
+  gap: clamp(3rem, 5vw, 6rem);
+  max-width: var(--page-width);
+  min-height: calc(100svh - var(--header-height));
+  margin: 0 auto;
+  padding: clamp(3rem, 5vw, 5.5rem) var(--page-gutter);
+  overflow: hidden;
+}
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  container-type: inline-size;
+  border-top: 2px solid var(--ink);
+  padding-top: clamp(1.25rem, 2vw, 1.8rem);
+  animation: hero-copy-in 0.7s var(--ease-out) both;
+}
+
+.eyebrow {
+  margin: 0 0 1.75rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+/* Vorzeile im Hero: immer in einer Zeile. Die Schriftgröße folgt der Spaltenbreite
+   (Container-Einheit cqw; gemessen: Text ≈ 32,2 em breit → max. 3,1 cqw), damit nichts umbricht. */
+.hero-copy .eyebrow {
+  margin-bottom: clamp(2.25rem, 4vw, 4rem);
+  font-size: clamp(0.85rem, 2.95cqw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.095em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.hero-copy .eyebrow span {
+  white-space: nowrap;
+}
+
+.hero-intro {
+  max-width: 11.5ch;
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(3.4rem, 5.2vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: clamp(2rem, 3.5vw, 3.2rem);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(15.5rem, 18vw, 18rem);
+  max-width: 100%;
+  min-height: 3.5rem;
+  padding: 0 1.2rem;
+  border: 2px solid var(--blue);
+  border-radius: var(--action-radius);
+  background: var(--blue);
+  color: #fff;
+  font-size: var(--action-font-size);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  transition:
+    background 0.22s var(--ease-out),
+    color 0.22s var(--ease-out),
+    transform 0.22s var(--ease-out);
+}
+.button:hover,
+.button:focus-visible {
+  background: var(--cream);
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+
+.hero-portrait {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0;
+  animation: hero-portrait-in 0.8s 90ms var(--ease-out) both;
+}
+.portrait-frame {
+  position: relative;
+  padding: clamp(0.75rem, 1.1vw, 1rem);
+  border-radius: var(--action-radius);
+  background: var(--blue);
+  overflow: hidden;
+}
+.portrait-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 4.65;
+  object-fit: cover;
+  object-position: 50% 38%;
+  transition: transform 0.7s var(--ease-out);
+}
+.hero-portrait:hover img {
+  transform: scale(1.018);
+}
+
+@keyframes hero-copy-in {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes header-content-in {
+  from { opacity: 0; transform: translateY(-0.55rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes header-rule-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes hero-portrait-in {
+  from { opacity: 0; transform: translateY(1.25rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Abschnitte ---------- */
+.section-shell {
+  padding: clamp(5.5rem, 9vw, 9rem) var(--page-gutter);
+}
+
+.services {
+  background: var(--cream);
+}
+.section-heading {
+  margin-bottom: clamp(3.5rem, 6vw, 6rem);
+}
+.section-heading h2,
+.about h2,
+.contact h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(3.5rem, 6.5vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.service-list {
+  border-top: 2px solid var(--blue);
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 0.32fr 1fr 1.35fr;
+  align-items: start;
+  gap: 1rem;
+  padding: clamp(2rem, 3vw, 3.2rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+.service-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--orange);
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  transition: transform 0.3s var(--ease-out);
+}
+.service-row:nth-child(2) .service-number {
+  background: var(--blue);
+  color: #fff;
+}
+.service-row:nth-child(3) .service-number {
+  background: transparent;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+.service-row h3 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(1.45rem, 2.25vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  transition: transform 0.3s var(--ease-out);
+}
+.service-row:hover .service-number {
+  transform: translateY(-0.22rem);
+}
+.service-row:hover h3 {
+  transform: translateX(0.32rem);
+}
+.service-copy p {
+  max-width: 44rem;
+  margin: 0;
+}
+.service-details {
+  margin-top: 1.2rem !important;
+  color: #11110f9e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+/* ---------- Erfahrung ---------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(3.5rem, 7vw, 7rem);
+  background: var(--blue);
+  color: #fff;
+}
+.about-photos {
+  width: 100%;
+  max-width: 34rem;
+}
+.about-photo {
+  width: 100%;
+  margin: 0;
+  border: clamp(0.45rem, 0.7vw, 0.7rem) solid var(--orange);
+  border-radius: var(--action-radius);
+  overflow: hidden;
+}
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 42%;
+  transition: transform 0.7s var(--ease-out);
+}
+.about-photo:hover img {
+  transform: scale(1.018);
+}
+.about-copy {
+  container-type: inline-size;
+  max-width: 62rem;
+  padding-top: clamp(1.5rem, 2.5vw, 2.5rem);
+  border-top: 2px solid #fff4dfb3;
+}
+.about-copy .eyebrow {
+  color: var(--orange);
+}
+/* Überschrift: Die längste Zeile („Kultur- und Veranstaltungsmanagement.“, gemessen ≈ 17,6 em)
+   bestimmt über die Container-Einheit cqw die Schriftgröße – ab Tablet-Breite wird nichts getrennt.
+   Auf dem Handy greift die Untergrenze (siehe unten); dort darf getrennt werden. */
+.about-copy h2 {
+  color: var(--cream);
+  font-size: clamp(1.9rem, 5.4cqw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+.about-copy h2 span {
+  display: block;
+}
+.about-copy h2 span + span {
+  margin-top: 0.18em;
+}
+.about-copy > p:last-child {
+  max-width: 42rem;
+  margin: 2.4rem 0 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+}
+
+/* ---------- Kontakt ---------- */
+.contact {
+  padding: clamp(6rem, 11vw, 11rem) clamp(1.25rem, 4vw, 4.5rem);
+  background: var(--orange);
+  text-align: center;
+}
+.contact .eyebrow {
+  color: var(--ink);
+}
+.contact h2 {
+  font-size: clamp(4.5rem, 10vw, 11rem);
+}
+.contact-mail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding: 0 1.4rem;
+  border: 2px solid var(--blue);
+  border-radius: var(--action-radius);
+  color: var(--blue);
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background 0.22s var(--ease-out),
+    color 0.22s var(--ease-out),
+    transform 0.22s var(--ease-out);
+}
+.contact-mail:hover,
+.contact-mail:focus-visible {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Fußzeile ---------- */
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1.8rem clamp(1.25rem, 4vw, 4.5rem);
+  background: var(--cream);
+  font-size: 0.73rem;
+}
+.site-footer p {
+  margin: 0;
+}
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+.footer-links a {
+  transition: color 0.22s var(--ease-out);
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--blue);
+}
+
+/* ---------- Rechtsseiten / 404 ---------- */
+.legal-main {
+  min-height: calc(100vh - 5.5rem);
+  background: var(--cream);
+}
+.legal-title {
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4.5rem);
+  background: var(--orange);
+  border-bottom: 2px solid var(--blue);
+}
+.legal-title .eyebrow {
+  margin-bottom: 1.5rem;
+}
+.legal-title h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+.legal-prose {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: clamp(4.5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4.5rem);
+}
+.legal-prose section {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1.5rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--line);
+}
+.legal-prose h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.legal-prose p,
+.legal-prose ul {
+  grid-column: 2;
+  margin: 0;
+  line-height: 1.75;
+}
+.legal-prose p + p,
+.legal-prose p + ul,
+.legal-prose ul + p {
+  margin-top: -0.5rem;
+}
+.legal-prose ul {
+  padding-left: 1.2rem;
+}
+.legal-prose li + li {
+  margin-top: 0.45rem;
+}
+.legal-prose a {
+  color: var(--blue);
+  border-bottom: 1px solid;
+}
+.legal-date {
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--blue);
+  color: #11110f9e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Umbrüche ---------- */
+@media (max-width: 1100px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about-photos {
+    max-width: 32rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-portrait {
+    width: 88%;
+    max-width: 39rem;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    height: auto;
+  }
+  .site-header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.65rem;
+  }
+  .wordmark span {
+    font-size: 1.05rem;
+  }
+  .site-nav {
+    justify-content: space-between;
+    gap: 0.8rem;
+    width: 100%;
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
+  }
+  .site-nav a {
+    min-height: 2rem;
+  }
+  .site-nav a::after {
+    bottom: 0.15rem;
+  }
+  .hero {
+    min-height: auto;
+  }
+  .hero-inner {
+    min-height: auto;
+    padding-top: 3.25rem;
+    padding-bottom: 4.5rem;
+  }
+  .hero-intro {
+    max-width: none;
+    font-size: clamp(3rem, 13vw, 4.6rem);
+  }
+  /* Auf dem Handy passt die Zeile nicht komplett: „Bremen“ steht in der zweiten Zeile,
+     „Projekt- & Veranstaltungsmanagement“ bleibt zusammen (gemessen ≈ 25,5 em → max. 3,9 cqw). */
+  .hero-copy .eyebrow {
+    font-size: clamp(0.65rem, 3.75cqw, 1.05rem);
+    letter-spacing: 0.075em;
+  }
+  .hero-copy .eyebrow-sep {
+    display: none;
+  }
+  .hero-copy .eyebrow-city {
+    display: block;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .hero-portrait {
+    width: 100%;
+    max-width: none;
+    margin-top: 2.5rem;
+  }
+  .service-row {
+    grid-template-columns: 1fr;
+  }
+  .service-copy {
+    padding-top: 0.5rem;
+  }
+  .about-photos {
+    max-width: 25rem;
+  }
+  .about-photo {
+    width: 100%;
+  }
+  .about-copy h2 {
+    font-size: clamp(2.7rem, 5.4cqw, 5rem);
+  }
+  .contact-mail {
+    word-break: break-word;
+  }
+  .legal-main {
+    min-height: calc(100vh - 6.4rem);
+  }
+  .legal-title {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .legal-title h1 {
+    font-size: clamp(3.25rem, 17vw, 5rem);
+  }
+  .legal-prose section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .legal-prose p,
+  .legal-prose ul {
+    grid-column: 1;
+  }
+  .site-footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+  .site-footer p {
+    text-align: left;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *,
-  *::before,
-  *::after {
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Print styles */
-@media print {
-  .no-print {
-    display: none !important;
-  }
-}
-
-/* Mobile Optimierungen */
-@media (max-width: 640px) {
-  /* Buttons kleiner auf Mobile */
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.8125rem;
-  }
-
-  /* Cards mit weniger Padding */
-  .card {
-    padding: 1rem;
-  }
-
-  /* Bessere Lesbarkeit für lange Wörter */
-  .break-words {
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .hyphens-auto {
-    hyphens: auto;
-    -webkit-hyphens: auto;
-  }
-}
-
-/* Tablet Optimierungen */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .container {
-    padding: 0 1.5rem;
   }
 }

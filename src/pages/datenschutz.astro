@@ -1,197 +1,127 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const title = 'Datenschutzerklärung – Laura Ziegler';
-const description = 'Datenschutzerklärung für die Website von Laura Ziegler, Projektmanagement Bremen.';
-const canonicalURL = 'https://laura-ziegler.com/datenschutz';
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../data/site';
 ---
 
-<Layout title={title} description={description} canonical={canonicalURL} noIndex={true}>
-  <section class="section bg-white">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <nav class="mb-8 text-sm" aria-label="Breadcrumb">
-          <ol class="flex items-center gap-2 text-black/60">
-            <li><a href="/" class="hover:text-black transition-colors">Start</a></li>
-            <li aria-hidden="true">/</li>
-            <li class="text-black">Datenschutz</li>
-          </ol>
-        </nav>
-        
-        <h1 class="text-3xl md:text-4xl font-bold text-black mb-8">Datenschutzerklärung</h1>
-        
-        <div class="prose prose-slate max-w-none">
-          
-          <h2>1. Verantwortliche Stelle</h2>
-          <p>
-            Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
-            Laura Ziegler<br />
-            Osterdeich 18<br />
-            28203 Bremen<br />
-            Deutschland<br />
-            E-Mail: hallo@laura-ziegler.com
-          </p>
-          
-          <h2>2. Überblick: Welche Daten ich verarbeite</h2>
-          <p>
-            Je nachdem, wie Du diese Website nutzt, können folgende Daten verarbeitet werden:
-          </p>
-          <ul>
-            <li>Zugriffsdaten (Server-Logfiles)</li>
-            <li>Kommunikationsdaten (z. B. wenn Du mir schreibst)</li>
-            <li>Technisch notwendige Cookies/Local Storage (nur wenn erforderlich)</li>
-          </ul>
-          
-          <h2>3. Zugriffsdaten (Server-Logfiles)</h2>
-          <p>
-            Beim Besuch der Website verarbeitet der Hosting-Provider in meinem Auftrag Daten, 
-            die Dein Browser übermittelt (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, 
-            Referrer-URL, Browser/OS). Die Verarbeitung erfolgt zur technischen Bereitstellung, 
-            Stabilität und Sicherheit der Website.
-          </p>
-          <p>
-            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse 
-            an sicherem und stabilem Betrieb)
-          </p>
-          
-          <h2>4. Kontaktaufnahme (E-Mail)</h2>
-          <p>
-            Wenn Du mich kontaktierst, verarbeite ich Deine Angaben (z. B. Name, E-Mail, 
-            Nachricht), um Deine Anfrage zu beantworten und die Kommunikation zu führen.
-          </p>
-          <p>
-            <strong>Rechtsgrundlage:</strong>
-          </p>
-          <ul>
-            <li>Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen/Vertrag), soweit es um 
-                eine Anfrage zu Leistungen geht</li>
-            <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Kommunikation), in 
-                anderen Fällen</li>
-          </ul>
-          <p>
-            <strong>Speicherdauer:</strong> so lange, wie es für die Bearbeitung erforderlich 
-            ist, plus ggf. gesetzliche Aufbewahrungspflichten.
-          </p>
-          
-          <h2>5. Cookies & ähnliche Technologien</h2>
-          <p>
-            Diese Website kann Cookies oder ähnliche Technologien (z. B. Local Storage) verwenden.
-          </p>
-          <ul>
-            <li><strong>Technisch notwendige Cookies:</strong> erforderlich für die Funktion 
-                der Website (z. B. Spracheinstellungen).</li>
-            <li><strong>Optionale Cookies/Technologien (Statistik/Marketing):</strong> nur, 
-                wenn Du einwilligst.</li>
-          </ul>
-          <p>
-            <strong>Rechtsgrundlagen:</strong>
-          </p>
-          <ul>
-            <li>Technisch notwendig: § 25 Abs. 2 TDDDG (soweit einschlägig) und Art. 6 Abs. 1 
-                lit. f DSGVO</li>
-            <li>Optional (z. B. Statistik/Marketing): § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 
-                lit. a DSGVO (Einwilligung)</li>
-          </ul>
-          <p>
-            Du kannst Deine Einwilligung jederzeit über „<a href="/cookies">Cookie-Einstellungen</a>" 
-            ändern oder widerrufen.
-          </p>
-          
-          <h2>6. Empfänger:innen / Auftragsverarbeitung (Hosting)</h2>
-          <p>
-            Diese Website wird gehostet bei:<br />
-            <strong>Cloudflare, Inc.</strong><br />
-            101 Townsend St, San Francisco, CA 94107, USA<br /><br />
-            Cloudflare fungiert als CDN (Content Delivery Network) und Hosting-Provider. 
-            Dabei werden Zugriffsdaten (IP-Adresse, Zeitpunkt, aufgerufene Seiten) verarbeitet. 
-            Die Datenübermittlung in die USA erfolgt auf Basis von Standardvertragsklauseln (SCC) 
-            gemäß Art. 46 Abs. 2 lit. c DSGVO.
-          </p>
-          <p>
-            Dabei kann eine Verarbeitung von Zugriffsdaten im Rahmen der technischen 
-            Bereitstellung erfolgen.
-          </p>
-          <p>
-            Wenn der Hosting-Provider außerhalb der EU/EWR sitzt: Die Übermittlung kann auf 
-            Standardvertragsklauseln (SCC) gestützt werden. Details stellt der Hosting-Provider 
-            in seiner Datenschutzerklärung bereit.
-          </p>
-          
-          <h2>7. Deine Rechte</h2>
-          <p>
-            Du hast – je nach Voraussetzungen – folgende Rechte:
-          </p>
-          <ul>
-            <li>Auskunft (Art. 15 DSGVO)</li>
-            <li>Berichtigung (Art. 16 DSGVO)</li>
-            <li>Löschung (Art. 17 DSGVO)</li>
-            <li>Einschränkung (Art. 18 DSGVO)</li>
-            <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-            <li>Widerspruch (Art. 21 DSGVO)</li>
-            <li>Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
-          </ul>
-          
-          <h2>8. Beschwerderecht bei einer Aufsichtsbehörde</h2>
-          <p>
-            Du kannst Dich bei einer Datenschutzaufsichtsbehörde beschweren, z. B. bei der 
-            für Deinen Wohnort zuständigen Behörde oder der Behörde meines Bundeslands.
-          </p>
-          
-          <h2>9. Datensicherheit</h2>
-          <p>
-            Ich setze technische und organisatorische Maßnahmen ein, um Deine Daten gegen 
-            Verlust, Missbrauch und unbefugten Zugriff zu schützen.
-          </p>
-          
-          <h2>10. Änderungen dieser Datenschutzerklärung</h2>
-          <p>
-            Ich kann diese Datenschutzerklärung aktualisieren, wenn sich Inhalte oder 
-            eingesetzte Dienste ändern.
-          </p>
-          
-          <hr />
-          
-          <p class="text-sm text-black/50 mt-8">
-            Stand: Januar 2026
-          </p>
-        </div>
-      </div>
-    </div>
+<LegalLayout
+  title="Datenschutz | Laura Ziegler"
+  description="Datenschutzerklärung für die Website von Laura Ziegler, Projekt- und Veranstaltungsmanagement Bremen."
+  heading="Datenschutz"
+  updated="September 2026"
+>
+  <section>
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>
+      Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
+      {site.name}<br />
+      {site.address.street}<br />
+      {site.address.zip} {site.address.city}<br />
+      {site.address.country}<br />
+      E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
   </section>
-</Layout>
 
-<style>
-  .prose h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  .prose p {
-    color: #475569;
-    margin-bottom: 1rem;
-  }
-  .prose ul {
-    list-style-type: disc;
-    list-style-position: inside;
-    color: #475569;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-  }
-  .prose ul li {
-    margin-bottom: 0.5rem;
-  }
-  .prose a {
-    color: var(--color-coral);
-    transition: color 0.2s ease;
-  }
-  .prose a:hover {
-    color: #0f172a;
-  }
-  .prose hr {
-    border-color: #e2e8f0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-</style>
+  <section>
+    <h2>2. Überblick: Welche Daten ich verarbeite</h2>
+    <p>Je nachdem, wie Du diese Website nutzt, können folgende Daten verarbeitet werden:</p>
+    <ul>
+      <li>Zugriffsdaten (Server-Logfiles)</li>
+      <li>Kommunikationsdaten (z. B. wenn Du mir schreibst)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Zugriffsdaten (Server-Logfiles)</h2>
+    <p>
+      Beim Besuch der Website verarbeitet der Hosting-Provider in meinem Auftrag Daten, die
+      Dein Browser übermittelt (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seite,
+      Referrer-URL, Browser/Betriebssystem). Die Verarbeitung erfolgt zur technischen
+      Bereitstellung, Stabilität und Sicherheit der Website.
+    </p>
+    <p>
+      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+      einem sicheren und stabilen Betrieb).
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Kontaktaufnahme (E-Mail)</h2>
+    <p>
+      Wenn Du mich kontaktierst, verarbeite ich Deine Angaben (z. B. Name, E-Mail-Adresse,
+      Nachricht), um Deine Anfrage zu beantworten und die Kommunikation zu führen.
+    </p>
+    <p><strong>Rechtsgrundlage:</strong></p>
+    <ul>
+      <li>Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen/Vertrag), soweit es um eine Anfrage zu Leistungen geht</li>
+      <li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Kommunikation) in anderen Fällen</li>
+    </ul>
+    <p>
+      <strong>Speicherdauer:</strong> so lange, wie es für die Bearbeitung erforderlich ist,
+      zuzüglich gesetzlicher Aufbewahrungspflichten.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Cookies, Tracking und externe Dienste</h2>
+    <p>
+      Diese Website setzt selbst keine Cookies ein und verwendet keine Tracking-, Analyse-
+      oder Marketing-Dienste. Es werden keine Inhalte von Drittanbietern (z. B. Google Fonts,
+      Karten, Videos) eingebunden.
+    </p>
+    <p>
+      Der Link zu LinkedIn führt auf eine externe Website. Erst mit dem Klick auf den Link
+      werden Daten an LinkedIn übertragen; es gilt dann die Datenschutzerklärung von LinkedIn.
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Hosting</h2>
+    <p>
+      Diese Website wird gehostet bei <strong>Cloudflare, Inc.</strong>, 101 Townsend St,
+      San Francisco, CA 94107, USA. Cloudflare stellt die Website als Content Delivery Network
+      bereit und verarbeitet dabei Zugriffsdaten (IP-Adresse, Zeitpunkt, aufgerufene Seiten)
+      im Rahmen der technischen Bereitstellung. Eine Datenübermittlung in die USA erfolgt auf
+      Grundlage von Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO sowie des
+      EU-US Data Privacy Framework. Details stellt Cloudflare in seiner Datenschutzerklärung
+      bereit.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Deine Rechte</h2>
+    <p>Du hast – je nach Voraussetzungen – folgende Rechte:</p>
+    <ul>
+      <li>Auskunft (Art. 15 DSGVO)</li>
+      <li>Berichtigung (Art. 16 DSGVO)</li>
+      <li>Löschung (Art. 17 DSGVO)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruch (Art. 21 DSGVO)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+    <p>
+      Du kannst Dich bei einer Datenschutzaufsichtsbehörde beschweren, z. B. bei der für
+      Deinen Wohnort zuständigen Behörde oder bei der Landesbeauftragten für Datenschutz und
+      Informationsfreiheit der Freien Hansestadt Bremen.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. Datensicherheit</h2>
+    <p>
+      Ich setze technische und organisatorische Maßnahmen ein, um Deine Daten gegen Verlust,
+      Missbrauch und unbefugten Zugriff zu schützen. Die Website ist über HTTPS verschlüsselt.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Ich kann diese Datenschutzerklärung aktualisieren, wenn sich Inhalte oder eingesetzte
+      Dienste ändern.
+    </p>
+  </section>
+</LegalLayout>

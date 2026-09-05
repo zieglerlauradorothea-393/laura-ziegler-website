@@ -1,0 +1,21 @@
+---
+import { leistungen } from '../data/site';
+---
+
+<section class="services section-shell" id="leistungen">
+  <div class="section-heading">
+    <h2>Leistungen</h2>
+  </div>
+  <div class="service-list">
+    {leistungen.map((l) => (
+      <article class="service-row">
+        <span class="service-number">{l.nr}</span>
+        <h3>{l.title}</h3>
+        <div class="service-copy">
+          <p>{l.text}</p>
+          <p class="service-details">{l.keywords.join(' · ')}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
