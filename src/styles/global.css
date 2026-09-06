@@ -517,12 +517,66 @@ img {
   padding: clamp(6rem, 11vw, 11rem) clamp(1.25rem, 4vw, 4.5rem);
   background: var(--orange);
   text-align: center;
+  overflow-x: clip; /* der Smiley ragt rechts über die Überschrift hinaus – nie über den Seitenrand */
 }
 .contact .eyebrow {
   color: var(--ink);
 }
 .contact h2 {
   font-size: clamp(4.5rem, 10vw, 11rem);
+}
+/* „Lass uns reden.“ – bei Maus über der Überschrift wird der Schlusspunkt zum Smiley:
+   Der Punkt blendet aus, aus seiner Position springt ein blaues Gesicht hervor (mit leichtem
+   Überschwingen), zwinkert einmal und bleibt, bis die Maus die Zeile verlässt. Nur mit Maus. */
+.contact-punct {
+  position: relative; /* bleibt inline, sonst lesen Screenreader „reden .“ mit Leerzeichen */
+}
+.contact-dot {
+  transition: opacity 0.2s ease;
+}
+.contact-smile {
+  position: absolute;
+  left: 0.08em; /* kleiner Abstand zum letzten Buchstaben */
+  bottom: 0.2em; /* sitzt auf der Grundlinie des Textes */
+  width: 0.82em;
+  height: 0.82em;
+  color: var(--blue);
+  opacity: 0;
+  transform: translateY(0.15em) rotate(-30deg) scale(0.2);
+  transform-origin: 18% 100%;
+  transition:
+    opacity 0.15s ease,
+    transform 0.4s var(--ease-out);
+  pointer-events: none;
+}
+.smile-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@media (hover: hover) {
+  .contact h2:hover .contact-dot {
+    opacity: 0;
+  }
+  .contact h2:hover .contact-smile {
+    opacity: 1;
+    transform: rotate(-6deg); /* leicht schief gelegter Kopf */
+    transition:
+      opacity 0.15s ease,
+      transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Überschwingen beim Hereinspringen */
+  }
+  .contact h2:hover .smile-eye-wink {
+    animation: smile-wink 0.7s 0.65s ease-in-out 1 both;
+  }
+}
+@keyframes smile-wink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  35%,
+  65% {
+    transform: scaleY(0.1);
+  }
 }
 .contact-mail {
   display: inline-flex;

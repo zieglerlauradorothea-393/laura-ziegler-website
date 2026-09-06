@@ -1,9 +1,18 @@
 ---
 import { site, kontakt, mailto } from '../data/site';
+
+// Der Schlusspunkt der Überschrift bekommt ein eigenes Element: Bei Maus darüber
+// wird er zum Smiley (siehe .contact-punct in global.css). Screenreader lesen weiterhin „Lass uns reden.“
+const headingText = kontakt.heading.replace(/\.$/, '');
+const hasDot = kontakt.heading.endsWith('.');
 ---
 
 <section class="contact" id="kontakt">
   <p class="eyebrow">{kontakt.eyebrow}</p>
-  <h2>{kontakt.heading}</h2>
+  <h2 aria-label={kontakt.heading}>
+    {headingText}{hasDot && (
+      <span class="contact-punct"><span class="contact-dot">.</span><svg class="contact-smile" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="50" fill="currentColor" /><circle class="smile-eye" cx="34" cy="41" r="7.5" fill="var(--orange)" /><circle class="smile-eye smile-eye-wink" cx="66" cy="41" r="7.5" fill="var(--orange)" /><path d="M30 61 Q50 84 70 61" fill="none" stroke="var(--orange)" stroke-width="8.5" stroke-linecap="round" /></svg></span>
+    )}
+  </h2>
   <a class="contact-mail" href={mailto}>{site.email}</a>
 </section>
