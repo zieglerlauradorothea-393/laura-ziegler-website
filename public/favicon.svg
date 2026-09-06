@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" fill="#fa4b0b"/>
-  <!-- LZ-Monogramm der Visitenkarte, Blau -->
-  <g fill="#2812bd" transform="translate(21 8.4) scale(0.0786)">
-    <rect x="0" y="0" width="62" height="312"/>
-    <rect x="0" y="250" width="280" height="62"/>
-    <rect x="0" y="326" width="280" height="62"/>
-    <polygon points="280,388 190,388 0,538 90,538"/>
-    <rect x="0" y="538" width="280" height="62"/>
+  <!-- LZ-Monogramm der Visitenkarte (Proportionen aus der Karte übernommen), füllt die volle Höhe -->
+  <g fill="#2812bd" transform="translate(17.75 1) scale(0.10248)">
+    <rect x="0" y="0" width="53" height="300"/>
+    <rect x="0" y="247" width="271" height="53"/>
+    <rect x="1" y="307" width="270" height="48"/>
+    <polygon points="190,355 266,355 81,552 5,552"/>
+    <rect x="1" y="552" width="277" height="53"/>
   </g>
 </svg>
