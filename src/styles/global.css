@@ -452,12 +452,12 @@ img {
 .about-copy .eyebrow {
   color: var(--orange);
 }
-/* Überschrift: Die längste Zeile („Kultur- und Veranstaltungsmanagement.“, gemessen ≈ 17,6 em)
-   bestimmt über die Container-Einheit cqw die Schriftgröße – ab Tablet-Breite wird nichts getrennt.
-   Auf dem Handy greift die Untergrenze (siehe unten); dort darf getrennt werden. */
+/* Überschrift: Die längste Zeile („Veranstaltungen. Lehre.“, gemessen ≈ 10 em)
+   bestimmt über die Container-Einheit cqw die Schriftgröße – oberhalb von ca. 400 px Breite
+   bleibt jede Zeile ungetrennt. Auf dem Handy darf die dritte Zeile am Leerzeichen umbrechen (siehe unten). */
 .about-copy h2 {
   color: var(--cream);
-  font-size: clamp(1.9rem, 5.5cqw, 5rem);
+  font-size: clamp(2.25rem, 9.3cqw, 4.25rem);
   font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 1;
@@ -705,9 +705,6 @@ img {
   .about-photo {
     width: 100%;
   }
-  .about-copy h2 {
-    font-size: clamp(2.7rem, 5.5cqw, 5rem);
-  }
   .contact-mail {
     word-break: break-word;
   }
@@ -740,6 +737,14 @@ img {
   .footer-links {
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+}
+
+/* Schmale Handys: „Veranstaltungen. Lehre.“ bricht am Leerzeichen um; die Schrift richtet sich
+   nach der zweitlängsten Zeile („Kulturmanagement.“ ≈ 8,5 em), damit kein Wort getrennt wird. */
+@media (max-width: 420px) {
+  .about-copy h2 {
+    font-size: clamp(2rem, 11.5cqw, 4.25rem);
   }
 }
 

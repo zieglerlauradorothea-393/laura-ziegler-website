@@ -38,27 +38,48 @@ export const leistungen = [
   {
     nr: '01',
     title: 'Projektmanagement',
-    text: 'Ich bringe Ziele, Zuständigkeiten und Zeitpläne in eine klare Struktur – und halte alle Beteiligten verlässlich im Prozess.',
-    keywords: ['Setup', 'Steuerung', 'Teamkoordination', 'Dokumentation'],
+    text: 'Ich unterstütze bei der operativen Steuerung von Projekten oder in einzelnen Projektphasen.',
+    // Schlagworte werden per CSS in Großbuchstaben dargestellt
+    keywords: [
+      'Projekt-Setup',
+      'Terminplanung',
+      'Aufgabensteuerung',
+      'Koordination',
+      'Interne Kommunikation',
+      'Dokumentation',
+    ],
   },
   {
     nr: '02',
     title: 'Veranstaltungsmanagement',
-    text: 'Von der ersten Idee bis zum Veranstaltungstag: Ich plane Abläufe, koordiniere Gewerke und sorge dafür, dass vor Ort alles ineinandergreift.',
-    keywords: ['Produktion', 'Locations', 'Dienstleister:innen', 'Durchführung'],
+    text: 'Ich übernehme die Organisation von Veranstaltungen.',
+    keywords: [
+      'Ablaufplanung',
+      'Produktionsplanung',
+      'Locations',
+      'Dienstleister:innen',
+      'Vor-Ort-Koordination',
+    ],
   },
   {
     nr: '03',
-    title: 'Organisation & Förderung',
-    text: 'Ich übernehme auch klar abgegrenzte Teilbereiche – besonders dort, wo Sorgfalt, Überblick und gute Kommunikation gefragt sind.',
-    keywords: ['Verwaltung', 'Fördermittel', 'Abrechnung', 'Ergebnissicherung'],
+    title: 'Projektadministration & Förderabwicklung',
+    text: 'Ich bearbeite die förderbezogene Abwicklung und Nachweisführung von Projekten.',
+    keywords: [
+      'Verwaltung',
+      'Dokumentenmanagement',
+      'Mittelabruf',
+      'Abrechnung',
+      'Verwendungsnachweise',
+      'Ergebnissicherung',
+    ],
   },
 ] as const;
 
 export const erfahrung = {
   // Jede Zeile steht für sich; die längste bestimmt die Schriftgröße auf dem Desktop.
-  lines: ['Projektleitung.', 'Kultur- und Veranstaltungsmanagement.', 'Lehre.'],
-  text: 'In Kultur- und Vereinsarbeit, Filmproduktion und Theaterbetrieb.',
+  lines: ['Projektleitung.', 'Kulturmanagement.', 'Veranstaltungen. Lehre.'],
+  text: 'Erfahrung aus Vereinsarbeit, Filmproduktion und Theaterbetrieb.',
   image: {
     src: '/images/laura-projekte.jpg',
     alt: 'Laura Ziegler vor einer farbigen Wand in Bremen',
